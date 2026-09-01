@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import HeroSlider from './components/HeroSlider';
 import ShopByCategory from './components/ShopByCategory';
+import DiamondJewellery from './components/DiamondJewellery';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
 
@@ -37,6 +38,7 @@ export default function App() {
       <main>
         <HeroSlider />
         <ShopByCategory />
+        <DiamondJewellery />
         <FeaturedProducts
           onAddToCart={handleAddToCart}
           onToggleWishlist={handleToggleWishlist}

@@ -622,6 +622,145 @@ button {
     color: #FFFFFF;
 }
 
+/* 6.5 DIAMOND JEWELLERY SECTION */
+.diamond-jewellery-section {
+    padding: 55px 0 45px;
+    background: #FFFFFF;
+}
+
+.diamond-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Left Hero Card (Tall Portrait) */
+.diamond-hero-card {
+    position: relative;
+    height: 520px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #11261B;
+}
+
+.diamond-card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.diamond-hero-card:hover .diamond-card-bg,
+.diamond-top-banner:hover .diamond-card-bg {
+    transform: scale(1.04);
+}
+
+.diamond-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.65) 100%);
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    color: #FFFFFF;
+}
+
+.pride-logo-text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.brand-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.collection-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    color: #E2C08D;
+    text-transform: lowercase;
+}
+
+.diamond-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+.shop-pill-btn {
+    display: inline-block;
+    background: #FFFFFF;
+    color: #111111;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 28px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.shop-pill-btn:hover {
+    background: #B30018;
+    color: #FFFFFF;
+}
+
+/* Right Column (Top Banner + 3 Small Cards) */
+.diamond-right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.diamond-top-banner {
+    position: relative;
+    height: 330px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #8F3B25;
+}
+
+/* Bottom 3 Small Product Cards */
+.diamond-small-cards-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    height: 166px;
+}
+
+.small-diamond-card {
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #F8F6F0;
+}
+
+.small-diamond-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.small-diamond-card:hover img {
+    transform: scale(1.08);
+}
+
 /* 7. FEATURED PRODUCTS */
 .featured-products-section {
     padding: 45px 0;
@@ -813,6 +952,9 @@ button {
     .categories-3col-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .cat-rect-img-box { height: 180px; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .diamond-grid-layout { grid-template-columns: 1fr; }
+    .diamond-hero-card { height: 420px; }
+    .diamond-top-banner { height: 280px; }
 }
 
 @media (max-width: 768px) {
