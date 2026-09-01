@@ -175,7 +175,7 @@ export default function InstagramSection() {
             <div className="flex items-center gap-3">
               <a
                 href="#store-locator"
-                className="bg-[#C5283C] hover:bg-[#8F0013] text-white font-sans text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-md transition-colors shadow-xs"
+                className="bg-[#E8A824] hover:bg-[#C98E1A] text-white font-sans text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-md transition-colors shadow-xs"
               >
                 Store Locator
               </a>
@@ -183,7 +183,7 @@ export default function InstagramSection() {
                 href="https://wa.me/919888888887"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-md transition-colors bg-white"
+                className="border border-[#E8A824] text-[#E8A824] hover:bg-[#E8A824] hover:text-white font-sans text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-md transition-colors bg-white"
               >
                 Request Call Back
               </a>

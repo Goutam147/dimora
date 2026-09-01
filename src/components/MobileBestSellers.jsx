@@ -212,7 +212,7 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
         <div className="text-center mt-2">
           <a
             href="#all-bestsellers"
-            className="inline-block border border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs font-semibold px-6 py-2 rounded-md transition-all duration-200"
+            className="inline-block border border-[#E8A824] text-[#E8A824] hover:bg-[#E8A824] hover:text-white font-sans text-xs font-semibold px-6 py-2 rounded-md transition-all duration-200"
           >
             View All Best Sellers
           </a>

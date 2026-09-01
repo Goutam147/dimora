@@ -99,15 +99,15 @@ export default function Header({ wishlistCount, cartCount }) {
 
           {/* Desktop Utilities (Store & Phone - Hidden on Mobile View) */}
           <div className="header-utilities hidden md:flex items-center gap-5 text-xs text-[#666666]">
-            <a href="#stores" className="header-util flex items-center gap-1.5 hover:text-[#C5283C] transition-colors">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="1.8">
+            <a href="#stores" className="header-util flex items-center gap-1.5 hover:text-[#E8A824] transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A824" strokeWidth="1.8">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
               <span className="font-medium text-[#333333]">Store</span>
             </a>
-            <a href="tel:+919888888887" className="header-util flex items-center gap-1.5 hover:text-[#C5283C] transition-colors">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="1.8">
+            <a href="tel:+919888888887" className="header-util flex items-center gap-1.5 hover:text-[#E8A824] transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8A824" strokeWidth="1.8">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               <span className="font-medium text-[#333333]">+91 9888888887</span>
@@ -116,7 +116,7 @@ export default function Header({ wishlistCount, cartCount }) {
 
           {/* Desktop Search Box (Hidden on Mobile) */}
           <div className="header-search hidden md:block flex-1 max-w-[340px] mx-4">
-            <div className="search-box relative flex items-center border border-[#E2D5C8] rounded-md bg-white overflow-hidden shadow-2xs focus-within:border-[#C5283C] transition-colors">
+            <div className="search-box relative flex items-center border border-[#E2D5C8] rounded-md bg-white overflow-hidden shadow-2xs focus-within:border-[#E8A824] transition-colors">
               <input
                 type="text"
                 value={inputValue}
@@ -127,7 +127,7 @@ export default function Header({ wishlistCount, cartCount }) {
                 className="w-full px-3.5 py-1.5 text-xs outline-none text-[#111111] placeholder-[#888888] font-sans"
                 autoComplete="off"
               />
-              <button className="search-icon-btn px-3 py-1.5 text-[#666666] hover:text-[#C5283C]" aria-label="Search">
+              <button className="search-icon-btn px-3 py-1.5 text-[#666666] hover:text-[#E8A824]" aria-label="Search">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="11" cy="11" r="8" />
                   <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -139,14 +139,14 @@ export default function Header({ wishlistCount, cartCount }) {
           {/* Right Group: India Country Pill + Wishlist + Cart (Gold Scheme & Account Hidden on Mobile) */}
           <div className="flex items-center gap-2 md:gap-4">
             {/* India Country Selector Pill */}
-            <div className="country-pill border border-[#D0D0D0] bg-white px-2 py-0.5 md:px-2.5 md:py-1 rounded-full flex items-center gap-1 cursor-pointer hover:border-[#C5283C] transition-colors shadow-2xs">
+            <div className="country-pill border border-[#D0D0D0] bg-white px-2 py-0.5 md:px-2.5 md:py-1 rounded-full flex items-center gap-1 cursor-pointer hover:border-[#E8A824] transition-colors shadow-2xs">
               <svg width="16" height="16" viewBox="0 0 36 36" className="rounded-full overflow-hidden shrink-0">
                 <rect width="36" height="12" fill="#FF9933" />
                 <rect y="12" width="36" height="12" fill="#FFFFFF" />
                 <rect y="24" width="36" height="12" fill="#138808" />
                 <circle cx="18" cy="18" r="4.5" fill="none" stroke="#000080" strokeWidth="0.9" />
               </svg>
-              <span className="font-sans text-xs font-semibold text-[#C5283C]">India</span>
+              <span className="font-sans text-xs font-semibold text-[#E8A824]">India</span>
               <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#333333" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
@@ -162,7 +162,7 @@ export default function Header({ wishlistCount, cartCount }) {
             </div>
 
             {/* Account Icon (Desktop Only - Hidden on Mobile View) */}
-            <a href="#account" className="icon-link hidden md:flex relative text-[#111111] hover:text-[#C5283C] transition-colors" title="Account">
+            <a href="#account" className="icon-link hidden md:flex relative text-[#111111] hover:text-[#E8A824] transition-colors" title="Account">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                 <circle cx="12" cy="7" r="4" />
@@ -170,23 +170,23 @@ export default function Header({ wishlistCount, cartCount }) {
             </a>
 
             {/* Wishlist Heart Icon */}
-            <a href="#wishlist" className="icon-link relative text-[#111111] hover:text-[#C5283C] transition-colors p-0.5" title="Wishlist">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="1.7">
+            <a href="#wishlist" className="icon-link relative text-[#111111] hover:text-[#E8A824] transition-colors p-0.5" title="Wishlist">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A824" strokeWidth="1.7">
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
-              <span className="badge-count absolute -top-1 -right-1 bg-[#C5283C] text-white text-[0.58rem] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+              <span className="badge-count absolute -top-1 -right-1 bg-[#E8A824] text-white text-[0.58rem] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
                 {wishlistCount}
               </span>
             </a>
 
             {/* Cart Icon */}
-            <a href="#cart" className="icon-link relative text-[#111111] hover:text-[#C5283C] transition-colors p-0.5" title="Cart">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="1.7">
+            <a href="#cart" className="icon-link relative text-[#111111] hover:text-[#E8A824] transition-colors p-0.5" title="Cart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A824" strokeWidth="1.7">
                 <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <path d="M16 10a4 4 0 0 1-8 0" />
               </svg>
-              <span className="badge-count absolute -top-1 -right-1 bg-[#C5283C] text-white text-[0.58rem] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+              <span className="badge-count absolute -top-1 -right-1 bg-[#E8A824] text-white text-[0.58rem] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
                 {cartCount}
               </span>
             </a>

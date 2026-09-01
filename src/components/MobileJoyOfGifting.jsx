@@ -63,7 +63,7 @@ export default function MobileJoyOfGifting() {
         <div className="text-center mt-4">
           <a
             href="#explore-gifting"
-            className="inline-block border border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs font-semibold px-7 py-2 rounded-md transition-all duration-200"
+            className="inline-block border border-[#E8A824] text-[#E8A824] hover:bg-[#E8A824] hover:text-white font-sans text-xs font-semibold px-7 py-2 rounded-md transition-all duration-200"
           >
             Explore More
           </a>

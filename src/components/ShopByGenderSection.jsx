@@ -78,7 +78,7 @@ export default function ShopByGenderSection() {
                   <span className="font-serif text-xs font-semibold text-[#111111]">
                     {item.title}
                   </span>
-                  <span className="font-serif text-[0.65rem] text-[#C5283C] group-hover:underline">
+                  <span className="font-serif text-[0.65rem] text-[#E8A824] group-hover:underline">
                     Explore more
                   </span>
                 </div>
