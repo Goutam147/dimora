@@ -6,12 +6,12 @@ export default function Footer() {
       <div className="container footer-content">
         <div className="footer-brand">
           <img
-            src="https://cdn.joyalukkas.in/media/jas-assets/static/logo.png"
-            alt="Joyalukkas"
+            src="/diamora_logo.png"
+            alt="Dimora Jewellery Logo"
             className="footer-logo"
           />
           <p>
-            Joyalukkas is an ISO certified international jewellery group operating over 160 showrooms across 11 countries worldwide.
+            Dimora is a premier luxury jewellery brand offering 100% certified Gold, Solitaire, Diamond & Platinum collections.
           </p>
         </div>
         <div className="footer-col">
@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          <p>© 2026 Joyalukkas India Limited. All Rights Reserved.</p>
+          <p>© 2026 Dimora Jewellery India. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

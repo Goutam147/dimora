@@ -3,43 +3,43 @@ import React from 'react';
 const products = [
   {
     id: 1,
-    name: "Royal Floral Antique Gold Ring",
-    badge: "22K GOLD",
-    isDiamond: false,
-    weight: "BIS 916 | 8.45g",
+    name: "Royal Diamond Jhumka Earrings",
+    badge: "VVS DIAMOND",
+    isDiamond: true,
+    weight: "18K Gold | 12.45g",
     price: "₹57,880",
     oldPrice: "₹62,000",
-    img: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=400&q=80"
+    img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg"
   },
   {
     id: 2,
-    name: "Eleganza Solitaire Diamond Pendant",
-    badge: "VVS DIAMOND",
+    name: "Solitaire Diamond Halo Ring",
+    badge: "SOLITAIRE",
     isDiamond: true,
-    weight: "18K Gold | 0.50 ct",
+    weight: "Platinum 950 | VVS1",
     price: "₹84,500",
     oldPrice: "₹95,000",
-    img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80"
+    img: "/images/diamond_halo_ring.png"
   },
   {
     id: 3,
-    name: "Traditional Temple Gold Choker Set",
+    name: "Tennis Diamond Choker Necklace",
     badge: "22K GOLD",
     isDiamond: false,
     weight: "BIS 916 | 24.12g",
     price: "₹1,65,400",
     oldPrice: "₹1,78,000",
-    img: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80"
+    img: "/images/tennis_diamond_necklace.png"
   },
   {
     id: 4,
-    name: "Forever Love Diamond Engagement Ring",
-    badge: "SOLITAIRE",
+    name: "Pavé Gold & Diamond Cuff Bracelet",
+    badge: "EXCLUSIVE",
     isDiamond: true,
-    weight: "Platinum 950 | VVS1",
+    weight: "18K Gold | 14.20g",
     price: "₹1,12,000",
     oldPrice: "₹1,25,000",
-    img: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=400&q=80"
+    img: "/images/pave_gold_bracelet.png"
   }
 ];
 
@@ -48,8 +48,8 @@ export default function FeaturedProducts({ onAddToCart, onToggleWishlist }) {
     <section className="featured-products-section" id="products">
       <div className="container">
         <div className="section-title-wrap">
-          <h2>FEATURED PRODUCTS</h2>
-          <p>Bestselling Gold & Diamond Designs</p>
+          <h2 className="category-heading">FEATURED PRODUCTS</h2>
+          <p className="category-subheading">Bestselling Gold & Diamond Designs</p>
         </div>
 
         <div className="products-grid">

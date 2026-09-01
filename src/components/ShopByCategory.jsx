@@ -1,12 +1,12 @@
 import React from 'react';
 
 const categories = [
-  { title: "Jewellery Sets", img: "https://cdn.joyalukkas.in/media/wysiwyg/Jewellery_Set_1.png" },
-  { title: "Pendants", img: "https://cdn.joyalukkas.in/media/wysiwyg/pendant.png" },
-  { title: "Rings", img: "https://cdn.joyalukkas.in/media/wysiwyg/Rings.png" },
-  { title: "Earrings", img: "https://cdn.joyalukkas.in/media/wysiwyg/Earrings_2.jpg" },
-  { title: "Bangles", img: "https://cdn.joyalukkas.in/media/wysiwyg/Bangles.png" },
-  { title: "Mangalsutras", img: "https://cdn.joyalukkas.in/media/wysiwyg/Mangalasutras.png" }
+  { title: "Jewellery Sets", img: "/images/tennis_diamond_necklace.png" },
+  { title: "Pendants", img: "/images/necklace_hero.jpg" },
+  { title: "Rings", img: "/images/diamond_halo_ring.png" },
+  { title: "Earrings", img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg" },
+  { title: "Bangles", img: "/images/Diamond_bangle_product_shot_202608271248.jpeg" },
+  { title: "Nose Pins & Naths", img: "/images/Diamond_Nath_product_photography_202608261800.jpeg" }
 ];
 
 export default function ShopByCategory() {

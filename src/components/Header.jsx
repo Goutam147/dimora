@@ -7,8 +7,8 @@ export default function Header({ wishlistCount, cartCount }) {
         {/* Brand Logo */}
         <a href="/" className="brand-logo">
           <img
-            src="https://cdn.joyalukkas.in/media/jas-assets/static/logo.png"
-            alt="Joyalukkas - World's favourite jeweller"
+            src="/diamora_logo.png"
+            alt="Dimora Jewellery Logo"
             className="logo-img"
           />
         </a>
@@ -33,7 +33,7 @@ export default function Header({ wishlistCount, cartCount }) {
         {/* Search Box */}
         <div className="header-search">
           <div className="search-box">
-            <input type="text" placeholder="Search for Platinum Chain" autoComplete="off" />
+            <input type="text" placeholder="Search for Platinum Chain, Solitaires..." autoComplete="off" />
             <button className="search-icon-btn" aria-label="Search">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2">
                 <circle cx="11" cy="11" r="8" />

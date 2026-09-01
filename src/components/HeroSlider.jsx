@@ -3,15 +3,15 @@ import React, { useState, useEffect } from 'react';
 const slides = [
   {
     id: 1,
-    img: "https://cdn.joyalukkas.in/media/wysiwyg/Spreading_Joy_Web_Banner_for_JA_website-02_1.jpg",
-    alt: "Spreading Joy - How Joyalukkas Became the World's Favourite Jeweller",
-    link: "#buy-book"
+    img: "/images/diamora_hero_widescreen_banner.png",
+    alt: "Dimora Luxury Diamond Jewellery Banner",
+    link: "#collection"
   },
   {
     id: 2,
-    img: "https://cdn.joyalukkas.in/media/wysiwyg/40_offer_banner_with_No_Flag_Desktop_2560_x_930_2.png",
-    alt: "Biggest Jewellery Sale of the Year - Flat 40% OFF on Making Charges",
-    link: "#sale"
+    img: "/images/craftsmanship_macro.png",
+    alt: "Fine Jewellery Craftsmanship & Heritage",
+    link: "#craftsmanship"
   }
 ];
 

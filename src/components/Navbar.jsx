@@ -16,13 +16,12 @@ export default function Navbar() {
             <div className="mega-menu">
               <div className="mega-col">
                 <span className="mega-col-title">By Style</span>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/Drops_1.png" alt="" /> Drops</a>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/Jhumkas_1.png" alt="" /> Jhumkas</a>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/Hoops_1.png" alt="" /> Hoops</a>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/Dangler_1.png" alt="" /> Danglers</a>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/Chandbali_2.png" alt="" /> Chandbali</a>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/studs_2.png" alt="" /> Studs</a>
-                <a href="#products"><img src="https://cdn.joyalukkas.in/media/wysiwyg/Suidaga.png" alt="" /> Suidhaga</a>
+                <a href="#products"><img src="/images/Diamond_drop_earrings_displayed_202608261741.jpeg" alt="" /> Drops</a>
+                <a href="#products"><img src="/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg" alt="" /> Jhumkas</a>
+                <a href="#products"><img src="/images/Diamond_hoop_earrings_displayed_202608261741.jpeg" alt="" /> Hoops</a>
+                <a href="#products"><img src="/images/Diamond_drop_earrings_displayed_202608261740.jpeg" alt="" /> Danglers</a>
+                <a href="#products"><img src="/images/Woman_wearing_diamond_drop_earrings_202608261759.jpeg" alt="" /> Chandbali</a>
+                <a href="#products"><img src="/images/Diamond_stud_earrings_in_setting_202608261741.jpeg" alt="" /> Studs</a>
               </div>
               <div className="mega-col">
                 <span className="mega-col-title">By Price</span>
