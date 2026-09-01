@@ -60,8 +60,8 @@ export default function QualityServiceSection() {
           {/* Row 1: Crimson Brand Suite Banner Card */}
           <div className="w-full h-[190px] bg-[#B30018] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden">
             <img
-              src="/diamora_logo.png"
-              alt="Dimora Logo"
+              src="/nav_logo.png"
+              alt="Diamora Logo"
               className="h-10 w-auto object-contain brightness-0 invert mb-2"
             />
             <h3 className="font-serif italic text-2xl text-white font-normal tracking-wide">

@@ -87,7 +87,7 @@ export default function Header({ wishlistCount, cartCount }) {
             {/* Brand Logo */}
             <a href="/" className="brand-logo shrink-0 flex items-center">
               <img
-                src="/diamora_horizontal_logo.png"
+                src="/nav_logo.png"
                 alt="Diamora Jewellery Logo"
                 className="logo-img h-8 md:h-11 object-contain"
               />
@@ -270,7 +270,7 @@ export default function Header({ wishlistCount, cartCount }) {
           <div className="relative w-[82%] max-w-[320px] bg-white h-full shadow-2xl flex flex-col z-50 animate-slideRight">
             {/* Drawer Header */}
             <div className="p-4 bg-[#FAF3EB] border-b border-[#F0DEC9] flex items-center justify-between">
-              <img src="/diamora_logo.png" alt="Dimora" className="h-9 object-contain" />
+              <img src="/nav_logo.png" alt="Diamora" className="h-9 object-contain" />
               <button
                 onClick={() => setMobileDrawerOpen(false)}
                 className="text-[#333333] hover:text-[#C5283C] p-1 text-xl font-bold"
