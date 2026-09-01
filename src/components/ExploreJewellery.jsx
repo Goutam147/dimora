@@ -92,7 +92,7 @@ export default function ExploreJewellery() {
         <div className="flex justify-center mt-6">
           <a
             href="#explore-all-jewellery"
-            className="inline-block border-[1.5px] border-[#B30018] text-[#B30018] bg-white font-sans text-[0.92rem] font-semibold px-9 py-2.5 rounded transition-all duration-250 hover:bg-[#B30018] hover:text-white"
+            className="inline-block border-[1.5px] border-[#E8A824] text-[#E8A824] bg-white font-sans text-[0.92rem] font-semibold px-9 py-2.5 rounded transition-all duration-250 hover:bg-[#E8A824] hover:text-white"
           >
             Discover More
           </a>

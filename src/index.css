@@ -7,8 +7,8 @@
    ========================================================================== */
 
 :root {
-    --brand-red: #B30018;
-    --brand-red-dark: #8F0013;
+    --brand-red: #E8A824;
+    --brand-red-dark: #C98E1A;
     --gold-accent: #D4AF37;
     --gold-light: #F4E07B;
     --text-dark: #222222;
@@ -618,7 +618,7 @@ button {
 }
 
 .cat-rect-card:hover .cat-rect-title {
-    color: #B30018;
+    color: #E8A824;
 }
 
 /* View All Categories Button */
@@ -630,8 +630,8 @@ button {
 
 .view-all-categories-btn {
     display: inline-block;
-    border: 1.5px solid #B30018;
-    color: #B30018;
+    border: 1.5px solid #E8A824;
+    color: #E8A824;
     background: #FFFFFF;
     font-family: 'Inter', sans-serif;
     font-size: 0.88rem;
@@ -642,7 +642,7 @@ button {
 }
 
 .view-all-categories-btn:hover {
-    background: #B30018;
+    background: #E8A824;
     color: #FFFFFF;
 }
 
@@ -814,8 +814,8 @@ button {
 
 .explore-more-btn {
     display: inline-block;
-    border: 1.5px solid #B30018;
-    color: #B30018;
+    border: 1.5px solid #E8A824;
+    color: #E8A824;
     background: #FFFFFF;
     font-family: 'Inter', sans-serif;
     font-size: 0.92rem;
@@ -827,7 +827,7 @@ button {
 }
 
 .explore-more-btn:hover {
-    background: #B30018;
+    background: #E8A824;
     color: #FFFFFF;
 }
 
@@ -967,9 +967,9 @@ button {
 }
 
 .carousel-arrow:hover {
-    background: #B30018;
+    background: #E8A824;
     color: #FFFFFF;
-    border-color: #B30018;
+    border-color: #E8A824;
 }
 
 .prev-coll-arrow {

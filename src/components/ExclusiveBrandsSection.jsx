@@ -126,7 +126,7 @@ export default function ExclusiveBrandsSection() {
           {/* Left Arrow Button (Desktop Only - Vertically Centered) */}
           <button
             onClick={scrollLeftBtn}
-            className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all cursor-pointer"
+            className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#E8A824] hover:text-white hover:border-[#E8A824] transition-all cursor-pointer"
             aria-label="Previous Brands"
           >
             ‹
@@ -141,7 +141,7 @@ export default function ExclusiveBrandsSection() {
             {[...desktopBrands, ...desktopBrands, ...desktopBrands].map((brand, idx) => (
               <div
                 key={`${brand.id}-${idx}`}
-                className="shrink-0 w-[215px] h-[95px] rounded-lg border border-[#F3E2D3] bg-white p-4 flex flex-col items-center justify-center text-center shadow-sm hover:border-[#B30018] hover:shadow-md transition-all duration-300 cursor-pointer group"
+                className="shrink-0 w-[215px] h-[95px] rounded-lg border border-[#F3E2D3] bg-white p-4 flex flex-col items-center justify-center text-center shadow-sm hover:border-[#E8A824] hover:shadow-md transition-all duration-300 cursor-pointer group"
               >
                 <div className="flex items-center gap-1.5">
                   {brand.icon && <span className="text-xs">{brand.icon}</span>}
@@ -159,7 +159,7 @@ export default function ExclusiveBrandsSection() {
           {/* Right Arrow Button (Desktop Only - Vertically Centered) */}
           <button
             onClick={scrollRightBtn}
-            className="absolute -right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all cursor-pointer"
+            className="absolute -right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#E8A824] hover:text-white hover:border-[#E8A824] transition-all cursor-pointer"
             aria-label="Next Brands"
           >
             ›
