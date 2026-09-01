@@ -187,28 +187,81 @@ export default function Footer() {
       </div>
 
       {/* 3. SUB-FOOTER BAR (COPYRIGHT & APP STORES / PAYMENTS) */}
-      <div className="border-t border-b border-[#F0DEC9] py-4 px-5">
-        <div className="max-w-[1340px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#555555]">
+      <div className="border-t border-b border-[#F0DEC9] py-3.5 px-5">
+        <div className="max-w-[1340px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-xs text-[#333333]">
           {/* Copyright Text */}
-          <p>© Dimora India Ltd. 2026. All rights reserved</p>
+          <p className="font-sans text-xs text-[#333333]">@Dimora India Ltd. 2026. All rights reserved</p>
 
-          {/* Mobile App Buttons */}
+          {/* Mobile App Badges */}
           <div className="flex items-center gap-3">
-            <a href="#googleplay" className="bg-[#111111] text-white px-3 py-1.5 rounded flex items-center gap-2 text-xs font-semibold hover:bg-gray-800 transition-colors">
-              <span className="text-xs">▶</span> Google Play
+            {/* Google Play Button */}
+            <a
+              href="#googleplay"
+              className="bg-black text-white px-3.5 py-1.5 rounded-lg flex items-center gap-2.5 hover:opacity-90 transition-opacity h-[40px] border border-gray-800"
+            >
+              <svg width="20" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 20.5V3.5L14.5 12L3 20.5Z" fill="#00D2FF" />
+                <path d="M14.5 12L3 3.5L18 10.5L14.5 12Z" fill="#00F076" />
+                <path d="M14.5 12L18 10.5L21.5 12L18 13.5L14.5 12Z" fill="#FFC800" />
+                <path d="M14.5 12L3 20.5L18 13.5L14.5 12Z" fill="#FF3A44" />
+              </svg>
+              <div className="flex flex-col text-left leading-tight">
+                <span className="text-[0.55rem] tracking-wider text-gray-300 font-sans uppercase font-bold">ANDROID APP ON</span>
+                <span className="font-serif text-sm font-bold tracking-tight text-white">Google play</span>
+              </div>
             </a>
-            <a href="#appstore" className="bg-[#111111] text-white px-3 py-1.5 rounded flex items-center gap-2 text-xs font-semibold hover:bg-gray-800 transition-colors">
-              <span className="text-xs">🍏</span> App Store
+
+            {/* App Store Button */}
+            <a
+              href="#appstore"
+              className="bg-black text-white px-3.5 py-1.5 rounded-lg flex items-center gap-2.5 hover:opacity-90 transition-opacity h-[40px] border border-gray-800"
+            >
+              <svg width="20" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.35c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.67-1.09 1.75-.95 2.78 1.01.08 2.05-.53 2.67-1.28" />
+              </svg>
+              <div className="flex flex-col text-left leading-tight">
+                <span className="text-[0.55rem] tracking-wider text-gray-300 font-sans">Download on the</span>
+                <span className="font-sans text-sm font-semibold tracking-tight text-white">App Store</span>
+              </div>
             </a>
           </div>
 
           {/* Payment Method Badges */}
-          <div className="flex items-center gap-2">
-            <span className="px-2 py-0.5 bg-white border border-[#E4D5C8] rounded text-[0.65rem] font-bold text-[#006699]">Maestro</span>
-            <span className="px-2 py-0.5 bg-white border border-[#E4D5C8] rounded text-[0.65rem] font-bold text-[#FF5F00]">MasterCard</span>
-            <span className="px-2 py-0.5 bg-white border border-[#E4D5C8] rounded text-[0.65rem] font-bold text-[#1A1F71]">VISA</span>
-            <span className="px-2 py-0.5 bg-white border border-[#E4D5C8] rounded text-[0.65rem] font-bold text-[#006FCF]">AMEX</span>
-            <span className="px-2 py-0.5 bg-white border border-[#E4D5C8] rounded text-[0.65rem] font-bold text-[#0055A5]">Net Banking</span>
+          <div className="flex items-center gap-2.5">
+            {/* Maestro */}
+            <div className="h-[28px] px-2 bg-white border border-[#E0D5C8] rounded flex items-center gap-1.5 shadow-2xs">
+              <svg width="22" height="16" viewBox="0 0 32 20">
+                <circle cx="10" cy="10" r="9" fill="#0061A8" />
+                <circle cx="22" cy="10" r="9" fill="#EB001B" />
+                <path d="M16 3.6a8.97 8.97 0 0 1 3 6.4c0 2.6-1.1 5-3 6.4a8.97 8.97 0 0 1-3-6.4c0-2.6 1.1-5 3-6.4z" fill="#6C6BBD" />
+              </svg>
+              <span className="font-sans text-[0.65rem] font-bold text-[#0061A8]">Maestro</span>
+            </div>
+
+            {/* Mastercard */}
+            <div className="h-[28px] px-2 bg-white border border-[#E0D5C8] rounded flex items-center gap-1.5 shadow-2xs">
+              <svg width="22" height="16" viewBox="0 0 32 20">
+                <circle cx="10" cy="10" r="9" fill="#EB001B" />
+                <circle cx="22" cy="10" r="9" fill="#F79E1B" />
+                <path d="M16 3.6a8.97 8.97 0 0 1 3 6.4c0 2.6-1.1 5-3 6.4a8.97 8.97 0 0 1-3-6.4c0-2.6 1.1-5 3-6.4z" fill="#FF5F00" />
+              </svg>
+              <span className="font-sans text-[0.65rem] font-bold text-[#111111]">mastercard</span>
+            </div>
+
+            {/* VISA */}
+            <div className="h-[28px] px-2.5 bg-white border border-[#E4D5C8] rounded flex items-center justify-center shadow-2xs">
+              <span className="font-sans font-black italic text-xs tracking-wider text-[#1A1F71]">VISA</span>
+            </div>
+
+            {/* American Express */}
+            <div className="h-[28px] px-2 bg-[#006FCF] rounded flex items-center justify-center shadow-2xs">
+              <span className="font-sans text-[0.55rem] font-black text-white tracking-tighter uppercase leading-none">AMERICAN<br />EXPRESS</span>
+            </div>
+
+            {/* Net Banking */}
+            <div className="h-[28px] px-2.5 bg-[#0055A5] rounded flex items-center justify-center shadow-2xs">
+              <span className="font-sans text-[0.68rem] font-bold text-white tracking-tight">Net Banking</span>
+            </div>
           </div>
         </div>
       </div>
