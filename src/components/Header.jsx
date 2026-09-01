@@ -1,8 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+const searchPhrases = [
+  "Search for Solitaire Diamond Rings...",
+  "Search for Platinum Chains...",
+  "Search for Royal Diamond Necklaces...",
+  "Search for 22K Gold Bangles...",
+  "Search for Gemstone Drop Earrings...",
+  "Search for Bridal Mangalsutra...",
+  "Search for Kids Gold Jewellery..."
+];
+
 export default function Header({ wishlistCount, cartCount }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+
+  // Typewriter Auto-Typing Search Placeholder State
+  const [placeholderText, setPlaceholderText] = useState('');
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
 
   // Close menu on click outside
   useEffect(() => {
@@ -14,6 +32,37 @@ export default function Header({ wishlistCount, cartCount }) {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // Auto-typing typewriter effect logic
+  useEffect(() => {
+    if (isFocused || inputValue) return; // Pause typewriter when user is typing or input is focused
+
+    const currentPhrase = searchPhrases[phraseIndex];
+    let typingSpeed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      typingSpeed = 1600; // Pause when phrase is fully typed
+    } else if (isDeleting && charIndex === 0) {
+      typingSpeed = 300; // Brief pause before starting next phrase
+    }
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && charIndex < currentPhrase.length) {
+        setPlaceholderText(currentPhrase.substring(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+      } else if (!isDeleting && charIndex === currentPhrase.length) {
+        setIsDeleting(true);
+      } else if (isDeleting && charIndex > 0) {
+        setPlaceholderText(currentPhrase.substring(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setPhraseIndex((prev) => (prev + 1) % searchPhrases.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, phraseIndex, isFocused, inputValue]);
 
   return (
     <header className="main-header" id="mainHeader">
@@ -44,13 +93,17 @@ export default function Header({ wishlistCount, cartCount }) {
           </a>
         </div>
 
-        {/* Search Box */}
-        <div className="header-search hidden lg:block flex-1 max-w-[320px] mx-4">
-          <div className="search-box relative flex items-center border border-[#E2D5C8] rounded-md bg-white overflow-hidden">
+        {/* Search Box with Auto-Typing Placeholder */}
+        <div className="header-search hidden lg:block flex-1 max-w-[340px] mx-4">
+          <div className="search-box relative flex items-center border border-[#E2D5C8] rounded-md bg-white overflow-hidden shadow-2xs focus-within:border-[#C5283C] transition-colors">
             <input
               type="text"
-              placeholder="Search for Platinum Chain, Solitaires..."
-              className="w-full px-3.5 py-1.5 text-xs outline-none text-[#111111] placeholder-[#888888]"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              placeholder={inputValue ? '' : `${placeholderText}`}
+              className="w-full px-3.5 py-1.5 text-xs outline-none text-[#111111] placeholder-[#888888] font-sans"
               autoComplete="off"
             />
             <button className="search-icon-btn px-3 py-1.5 text-[#666666] hover:text-[#C5283C]" aria-label="Search">
