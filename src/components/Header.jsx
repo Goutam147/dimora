@@ -70,27 +70,29 @@ export default function Header({ wishlistCount, cartCount }) {
       <div className="max-w-[1340px] mx-auto px-4 py-1.5 md:py-2">
         {/* ROW 1: BRAND LOGO + UTILITIES / ACTIONS */}
         <div className="flex items-center justify-between gap-3 relative">
-          {/* Mobile Drawer Hamburger Button (Visible on Mobile) */}
-          <button
-            onClick={() => setMobileDrawerOpen(true)}
-            className="md:hidden text-[#C5283C] p-1 focus:outline-none"
-            aria-label="Open Mobile Drawer Menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </button>
+          {/* Left Group: Mobile Drawer Hamburger Button + Brand Logo (Placed Left) */}
+          <div className="flex items-center gap-1.5 shrink-0">
+            <button
+              onClick={() => setMobileDrawerOpen(true)}
+              className="md:hidden text-[#C5283C] p-1 focus:outline-none"
+              aria-label="Open Mobile Drawer Menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
 
-          {/* Brand Logo */}
-          <a href="/" className="brand-logo shrink-0 flex items-center">
-            <img
-              src="/diamora_logo.png"
-              alt="Dimora Jewellery Logo"
-              className="logo-img h-8 md:h-11 object-contain"
-            />
-          </a>
+            {/* Brand Logo */}
+            <a href="/" className="brand-logo shrink-0 flex items-center">
+              <img
+                src="/diamora_logo.png"
+                alt="Dimora Jewellery Logo"
+                className="logo-img h-8 md:h-11 object-contain"
+              />
+            </a>
+          </div>
 
           {/* Desktop Utilities (Store & Phone - Hidden on Mobile View) */}
           <div className="header-utilities hidden md:flex items-center gap-5 text-xs text-[#666666]">
@@ -131,7 +133,7 @@ export default function Header({ wishlistCount, cartCount }) {
             </div>
           </div>
 
-          {/* Right Group: India Country Pill + Icons */}
+          {/* Right Group: India Country Pill + Wishlist + Cart (Gold Scheme & Account Hidden on Mobile) */}
           <div className="flex items-center gap-2 md:gap-4">
             {/* India Country Selector Pill */}
             <div className="country-pill border border-[#D0D0D0] bg-white px-2 py-0.5 md:px-2.5 md:py-1 rounded-full flex items-center gap-1 cursor-pointer hover:border-[#C5283C] transition-colors shadow-2xs">
@@ -147,8 +149,8 @@ export default function Header({ wishlistCount, cartCount }) {
               </svg>
             </div>
 
-            {/* Desktop Gold Scheme Badge */}
-            <div className="gold-scheme-badge hidden lg:flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity">
+            {/* Desktop Gold Scheme Badge (Hidden on Mobile) */}
+            <div className="gold-scheme-badge hidden md:flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity">
               <div className="badge-text flex flex-col text-right text-[0.72rem] font-bold leading-tight text-[#111111]">
                 <small className="text-[0.65rem] text-[#666666] font-normal">Gold</small>
                 <span>Scheme</span>
@@ -156,7 +158,7 @@ export default function Header({ wishlistCount, cartCount }) {
               <div className="gold-stack-icon text-xl">🪙</div>
             </div>
 
-            {/* Account Icon (Desktop) */}
+            {/* Account Icon (Desktop Only - Hidden on Mobile View) */}
             <a href="#account" className="icon-link hidden md:flex relative text-[#111111] hover:text-[#C5283C] transition-colors" title="Account">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />

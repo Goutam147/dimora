@@ -1201,6 +1201,10 @@ body {
         display: none !important;
     }
 
+    .gold-scheme-badge {
+        display: none !important;
+    }
+
     .main-navbar {
         display: none !important;
     }
