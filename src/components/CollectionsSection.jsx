@@ -96,10 +96,10 @@ export default function CollectionsSection() {
           </button>
         </div>
 
-        {/* Explore More Button */}
+        {/* View All Collection Button */}
         <div className="explore-more-wrap">
           <a href="#explore-collections" className="explore-more-btn">
-            Explore More
+            View All Collection
           </a>
         </div>
       </div>
