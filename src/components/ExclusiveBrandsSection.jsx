@@ -6,47 +6,35 @@ const brandBanners = [
     id: 1,
     name: "PRIDE",
     subtitle: "DIAMOND COLLECTION",
-    img: "/images/Woman_wearing_diamond_earrings_202608261739.jpeg",
-    badge: "PRIDE",
-    badgeSub: "diamond collection",
-    textColor: "text-[#0A2E5C]",
-    fontStyle: "font-serif font-bold text-xl tracking-[0.18em]"
+    img: "/images/Woman_wearing_diamond_earrings_202608261739.jpeg"
   },
   {
     id: 2,
     name: "ratna",
     displayName: "r · a · t · n · a",
     subtitle: "PRECIOUS STONE JEWELLERY",
-    img: "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg",
-    textColor: "text-[#4A0E17]",
-    fontStyle: "font-serif text-base font-medium tracking-[0.22em]"
+    img: "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg"
   },
   {
     id: 3,
     name: "apurva",
     displayName: "APURVA",
     subtitle: "ANTIQUE COLLECTION",
-    img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg",
-    textColor: "text-[#3A1F13]",
-    fontStyle: "font-serif font-bold text-base tracking-widest"
+    img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg"
   },
   {
     id: 4,
     name: "veda",
     displayName: "VEDA",
     subtitle: "TRADITIONAL JEWELLERY",
-    img: "/images/necklace_hero.jpg",
-    textColor: "text-[#1A1A1A]",
-    fontStyle: "font-serif italic text-lg font-bold"
+    img: "/images/necklace_hero.jpg"
   },
   {
     id: 5,
     name: "eleganza",
     displayName: "ELEGANZA",
     subtitle: "POLKI DIAMOND COLLECTION",
-    img: "/images/tennis_diamond_necklace.png",
-    textColor: "text-[#222222]",
-    fontStyle: "font-serif font-light text-base tracking-[0.18em]"
+    img: "/images/tennis_diamond_necklace.png"
   }
 ];
 
@@ -110,17 +98,6 @@ export default function ExclusiveBrandsSection() {
               alt="PRIDE Diamond Collection"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
-
-            {/* Brand Logo Badge (Top Right Overlay) */}
-            <div className="absolute top-3 right-3 z-10 text-right bg-white/90 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-[#F0DEC9] shadow-sm">
-              <div className="font-serif font-bold text-lg tracking-[0.18em] text-[#0A2E5C] flex items-center gap-1 justify-end leading-none">
-                <span>PRIDE</span>
-                <span className="text-xs text-[#00A3E0]">💎</span>
-              </div>
-              <span className="block font-sans text-[0.52rem] tracking-widest text-[#0A2E5C] uppercase font-bold mt-0.5">
-                diamond collection
-              </span>
-            </div>
           </a>
 
           {/* Row 2: Touch-Scrollable Row of Brand Cards */}
@@ -139,16 +116,6 @@ export default function ExclusiveBrandsSection() {
                   alt={brand.displayName || brand.name}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
-
-                {/* Brand Overlay Title Badge (Top Right Overlay) */}
-                <div className="absolute top-2.5 right-2.5 z-10 text-right bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-[#F0DEC9] shadow-xs">
-                  <span className={`${brand.fontStyle} ${brand.textColor} block leading-tight`}>
-                    {brand.displayName || brand.name}
-                  </span>
-                  <span className="font-sans text-[0.48rem] tracking-widest text-[#666666] uppercase font-semibold block mt-0.5">
-                    {brand.subtitle}
-                  </span>
-                </div>
               </a>
             ))}
           </div>
