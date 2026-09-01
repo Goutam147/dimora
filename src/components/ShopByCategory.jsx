@@ -1,12 +1,12 @@
 import React from 'react';
 
 const categories = [
-  { title: "Jewellery Sets", img: "/images/tennis_diamond_necklace.png" },
-  { title: "Pendants", img: "/images/necklace_hero.jpg" },
-  { title: "Rings", img: "/images/diamond_halo_ring.png" },
-  { title: "Earrings", img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg" },
-  { title: "Bangles", img: "/images/Diamond_bangle_product_shot_202608271248.jpeg" },
-  { title: "Nose Pins & Naths", img: "/images/Diamond_Nath_product_photography_202608261800.jpeg" }
+  { id: 1, title: "Jewellery Sets", img: "/images/tennis_diamond_necklace.png", link: "#sets" },
+  { id: 2, title: "Pendants", img: "/images/necklace_hero.jpg", link: "#pendants" },
+  { id: 3, title: "Rings", img: "/images/diamond_halo_ring.png", link: "#rings" },
+  { id: 4, title: "Earrings", img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg", link: "#earrings" },
+  { id: 5, title: "Bangles", img: "/images/pave_gold_bracelet.png", link: "#bangles" },
+  { id: 6, title: "Mangalsutra", img: "/images/Woman_wearing_diamond_drop_earrings_202608261759.jpeg", link: "#mangalsutra" }
 ];
 
 export default function ShopByCategory() {
@@ -39,15 +39,23 @@ export default function ShopByCategory() {
           <p className="category-subheading">Explore our diverse selections. Find your style</p>
         </div>
 
-        <div className="categories-row">
-          {categories.map((cat, idx) => (
-            <a key={idx} href="#products" className="cat-card">
-              <div className="cat-img-wrap">
-                <img src={cat.img} alt={cat.title} />
+        {/* 3 Column x 2 Row Rectangular Grid */}
+        <div className="categories-3col-grid">
+          {categories.map((cat) => (
+            <a key={cat.id} href={cat.link} className="cat-rect-card">
+              <div className="cat-rect-img-box">
+                <img src={cat.img} alt={cat.title} className="cat-rect-img" />
               </div>
-              <span>{cat.title}</span>
+              <span className="cat-rect-title">{cat.title}</span>
             </a>
           ))}
+        </div>
+
+        {/* View All Categories Button */}
+        <div className="view-all-btn-wrap">
+          <a href="#all-categories" className="view-all-categories-btn">
+            View All Categories
+          </a>
         </div>
       </div>
     </section>

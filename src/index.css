@@ -545,44 +545,81 @@ button {
     letter-spacing: 0.2px;
 }
 
-.categories-row {
+/* 3 Column x 2 Row Rectangular Category Grid */
+.categories-3col-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 24px;
+    margin-bottom: 35px;
 }
 
-.cat-card {
+.cat-rect-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    text-align: center;
-    transition: transform 0.2s ease;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.cat-card:hover {
-    transform: translateY(-4px);
-}
-
-.cat-img-wrap {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+.cat-rect-img-box {
+    width: 100%;
+    height: 215px;
+    border-radius: 14px;
     overflow: hidden;
-    border: 2px solid #F0F0F0;
-    background: #FAFAFA;
+    background: #F8F6F0;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
-.cat-img-wrap img {
+.cat-rect-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.cat-card span {
+.cat-rect-card:hover .cat-rect-img {
+    transform: scale(1.05);
+}
+
+.cat-rect-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111111;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.cat-rect-card:hover .cat-rect-title {
+    color: #B30018;
+}
+
+/* View All Categories Button */
+.view-all-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.view-all-categories-btn {
+    display: inline-block;
+    border: 1.5px solid #B30018;
+    color: #B30018;
+    background: #FFFFFF;
+    font-family: 'Inter', sans-serif;
     font-size: 0.88rem;
     font-weight: 600;
-    color: var(--text-dark);
+    padding: 11px 34px;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.view-all-categories-btn:hover {
+    background: #B30018;
+    color: #FFFFFF;
 }
 
 /* 7. FEATURED PRODUCTS */
@@ -773,7 +810,8 @@ button {
     .hero-banner-section { height: 420px; }
     .header-search { max-width: 250px; }
     .nav-links { gap: 10px; font-size: 0.8rem; }
-    .categories-row { grid-template-columns: repeat(3, 1fr); }
+    .categories-3col-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .cat-rect-img-box { height: 180px; }
     .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -782,11 +820,14 @@ button {
     .header-utilities, .country-pill, .gold-scheme-badge { display: none; }
     .header-search { display: none; }
     .main-navbar { display: none; }
-    .categories-row { grid-template-columns: repeat(2, 1fr); }
+    .categories-3col-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .cat-rect-img-box { height: 160px; }
     .products-grid { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
     .hero-banner-section { height: 240px; }
+    .categories-3col-grid { grid-template-columns: 1fr; }
+    .cat-rect-img-box { height: 190px; }
 }
