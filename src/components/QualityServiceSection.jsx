@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionHeader from './SectionHeader';
 
 const trustFeatures = [
   {
@@ -66,14 +67,10 @@ export default function QualityServiceSection() {
     <section className="py-14 bg-white" id="service">
       <div className="max-w-[1340px] mx-auto px-5">
         {/* Section Header */}
-        <div className="text-center mb-9">
-          <h2 className="font-serif text-[1.95rem] font-semibold tracking-wider text-[#B30018] uppercase mb-1.5 leading-tight">
-            QUALITY-FIRST SERVICE
-          </h2>
-          <p className="font-sans text-[1.05rem] text-[#333333] font-normal tracking-tight">
-            We assure you that you will get what you can trust. Always!
-          </p>
-        </div>
+        <SectionHeader
+          title="QUALITY-FIRST SERVICE"
+          subtitle="We assure you that you will get what you can trust. Always!"
+        />
 
         {/* Video Banner Placeholder Image */}
         <div className="relative w-full h-[420px] rounded-2xl overflow-hidden mb-14 shadow-sm group">

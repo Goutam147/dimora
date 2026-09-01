@@ -1,32 +1,15 @@
 import React from 'react';
+import SectionHeader from './SectionHeader';
 
 export default function DiamondJewellery() {
   return (
     <section className="diamond-jewellery-section" id="diamond">
       <div className="container">
         {/* Section Header */}
-        <div className="section-title-wrap">
-          <div className="diamond-ornament-wrap">
-            <span className="ornament-line"></span>
-            <div className="diamond-icon-box">
-              <div className="sparkles">
-                <span className="sparkle sp-left"></span>
-                <span className="sparkle sp-mid"></span>
-                <span className="sparkle sp-right"></span>
-              </div>
-              <svg width="28" height="24" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 27L1 11L7 1H25L31 11L16 27Z" stroke="#C57835" strokeWidth="1.6" strokeLinejoin="round" fill="none" />
-                <path d="M1 11H31" stroke="#C57835" strokeWidth="1.6" />
-                <path d="M7 1L11.5 11L16 27L20.5 11L25 1" stroke="#C57835" strokeWidth="1.6" />
-                <path d="M16 1L11.5 11L16 27L20.5 11L16 1" stroke="#C57835" strokeWidth="1.6" />
-              </svg>
-            </div>
-            <span className="ornament-line"></span>
-          </div>
-
-          <h2 className="category-heading">DIAMOND JEWELLERY</h2>
-          <p className="category-subheading">Shine with pride. Explore our diamond jewellery!</p>
-        </div>
+        <SectionHeader
+          title="DIAMOND JEWELLERY"
+          subtitle="Shine with pride. Explore our diamond jewellery!"
+        />
 
         {/* Diamond Grid Layout */}
         <div className="diamond-grid-layout">
@@ -43,39 +26,61 @@ export default function DiamondJewellery() {
                 <small className="collection-subtext">diamond collection</small>
               </div>
               <h3 className="diamond-card-title">Crafted for those who wear their brilliance with pride</h3>
-              <a href="#shop" className="shop-pill-btn">SHOP NOW</a>
+              <a href="#explore-pride" className="shop-pill-btn">SHOP NOW</a>
             </div>
           </div>
 
           {/* Right Column (Top Banner + 3 Small Cards) */}
           <div className="diamond-right-column">
-            {/* Top Terracotta Banner */}
+            {/* Top Wide Banner Card */}
             <div className="diamond-top-banner terracotta-theme">
               <img
-                src="/images/tennis_diamond_necklace.png"
-                alt="Pride Diamond Necklace"
+                src="/images/necklace_hero.jpg"
+                alt="Emerald Collection"
                 className="diamond-card-bg"
               />
-              <div className="diamond-card-overlay">
-                <div className="pride-logo-text">
-                  <span className="brand-tag">PRIDE</span>
-                  <small className="collection-subtext">diamond collection</small>
+              <div className="diamond-card-overlay flex-row justify-between items-center">
+                <div>
+                  <h3 className="diamond-banner-title">Captivating Emeralds for Every Mood</h3>
+                  <p className="diamond-banner-sub">Timeless grace in every drop</p>
                 </div>
-                <h3 className="diamond-card-title">Timeless brilliance, crafted to shine.</h3>
-                <a href="#shop" className="shop-pill-btn">SHOP NOW</a>
+                <a href="#explore-emeralds" className="shop-pill-btn">SHOP NOW</a>
               </div>
             </div>
 
             {/* Bottom 3 Small Product Cards */}
             <div className="diamond-small-cards-row">
-              <div className="small-diamond-card">
-                <img src="/images/Diamond_drop_earrings_displayed_202608261741.jpeg" alt="Diamond Earrings" />
+              <div className="small-product-card">
+                <div className="small-card-img-box">
+                  <img
+                    src="/images/tennis_diamond_necklace.png"
+                    alt="Solitaire Ring"
+                    className="small-card-img"
+                  />
+                </div>
+                <span className="small-card-title">Solitaire Rings</span>
               </div>
-              <div className="small-diamond-card">
-                <img src="/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg" alt="Diamond Set" />
+
+              <div className="small-product-card">
+                <div className="small-card-img-box">
+                  <img
+                    src="/images/diamond_halo_ring.png"
+                    alt="Diamond Necklace"
+                    className="small-card-img"
+                  />
+                </div>
+                <span className="small-card-title">Diamond Necklaces</span>
               </div>
-              <div className="small-diamond-card">
-                <img src="/images/Diamond_bangle_product_shot_202608271248.jpeg" alt="Diamond Bracelet" />
+
+              <div className="small-product-card">
+                <div className="small-card-img-box">
+                  <img
+                    src="/images/Diamond_Nath_product_photography_202608261800.jpeg"
+                    alt="Diamond Earrings"
+                    className="small-card-img"
+                  />
+                </div>
+                <span className="small-card-title">Diamond Earrings</span>
               </div>
             </div>
           </div>

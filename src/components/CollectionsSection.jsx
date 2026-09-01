@@ -1,104 +1,74 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import SectionHeader from './SectionHeader';
 
 const collectionsData = [
-  {
-    id: 1,
-    title: "BELLA",
-    subtext: "COLLECTIONS",
-    img: "/images/Diamond_drop_earrings_displayed_202608261740.jpeg",
-    link: "#bella"
-  },
-  {
-    id: 2,
-    title: "AMOLI",
-    subtext: "The Heritage Collection",
-    img: "/images/Diamond_bangle_product_shot_202608271248.jpeg",
-    link: "#amoli"
-  },
-  {
-    id: 3,
-    title: "YUVA",
-    subtext: "Modern Lifestyle Jewellery",
-    img: "/images/tennis_diamond_necklace.png",
-    link: "#yuva"
-  },
-  {
-    id: 4,
-    title: "APURVA",
-    subtext: "Antique Temple Gold",
-    img: "/images/Ornate_diamond_Nath_product_photography_202608261758.jpeg",
-    link: "#apurva"
-  }
+  { id: 1, title: "Yuva Collection", subtitle: "Trendy & Everyday Wear", img: "/images/Woman_wearing_diamond_drop_earrings_202608261759.jpeg", link: "#yuva" },
+  { id: 2, title: "Apurva Collection", subtitle: "Antique Heritage Craftsmanship", img: "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg", link: "#apurva" },
+  { id: 3, title: "Sita Kalyanam", subtitle: "Grand Royal Bridal Jewellery", img: "/images/Woman_wearing_diamond_earrings_202608261739.jpeg", link: "#sita-kalyanam" },
+  { id: 4, title: "Eleganza Collection", subtitle: "Polki & Diamond Artistry", img: "/images/Model_wearing_diamond_nose_hoop_202608261801.jpeg", link: "#eleganza" },
+  { id: 5, title: "Ratna Collection", subtitle: "Precious Gemstones", img: "/images/necklace_hero.jpg", link: "#ratna" }
 ];
 
 export default function CollectionsSection() {
-  const [startIndex, setStartIndex] = useState(0);
+  const carouselRef = useRef(null);
 
-  const prevSlide = () => {
-    setStartIndex((prev) => (prev > 0 ? prev - 1 : collectionsData.length - 3));
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+    }
   };
 
-  const nextSlide = () => {
-    setStartIndex((prev) => (prev < collectionsData.length - 3 ? prev + 1 : 0));
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    }
   };
-
-  const visibleCards = collectionsData.slice(startIndex, startIndex + 3);
 
   return (
     <section className="collections-section" id="collections">
-      <div className="container relative-container">
+      <div className="container">
         {/* Section Header */}
-        <div className="section-title-wrap">
-          <div className="diamond-ornament-wrap">
-            <span className="ornament-line"></span>
-            <div className="diamond-icon-box">
-              <div className="sparkles">
-                <span className="sparkle sp-left"></span>
-                <span className="sparkle sp-mid"></span>
-                <span className="sparkle sp-right"></span>
-              </div>
-              <svg width="28" height="24" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 27L1 11L7 1H25L31 11L16 27Z" stroke="#C57835" strokeWidth="1.6" strokeLinejoin="round" fill="none" />
-                <path d="M1 11H31" stroke="#C57835" strokeWidth="1.6" />
-                <path d="M7 1L11.5 11L16 27L20.5 11L25 1" stroke="#C57835" strokeWidth="1.6" />
-                <path d="M16 1L11.5 11L16 27L20.5 11L16 1" stroke="#C57835" strokeWidth="1.6" />
-              </svg>
-            </div>
-            <span className="ornament-line"></span>
-          </div>
+        <SectionHeader
+          title="COLLECTIONS"
+          subtitle="Designed to perfection for every celebration!"
+        />
 
-          <h2 className="category-heading">COLLECTIONS</h2>
-          <p className="category-subheading">Find your style. Explore our diverse collections!</p>
-        </div>
-
-        {/* Collections Cards Carousel */}
+        {/* Collections Carousel Container with Arrows */}
         <div className="collections-carousel-wrapper">
-          <button className="carousel-arrow prev-coll-arrow" onClick={prevSlide} aria-label="Previous">
-            ❮
+          <button
+            onClick={scrollLeft}
+            className="carousel-arrow prev-coll-arrow"
+            aria-label="Previous Collection"
+          >
+            ‹
           </button>
 
-          <div className="collections-cards-grid">
-            {visibleCards.map((card) => (
-              <a key={card.id} href={card.link} className="collection-card">
+          <div className="collections-cards-grid" ref={carouselRef}>
+            {collectionsData.map((item) => (
+              <a key={item.id} href={item.link} className="collection-card">
                 <div className="collection-img-box">
-                  <img src={card.img} alt={card.title} className="collection-img" />
-                  <div className="collection-branding-watermark">
-                    <span className="coll-brand-name">{card.title}</span>
-                    <small className="coll-brand-sub">{card.subtext}</small>
-                  </div>
+                  <img src={item.img} alt={item.title} className="collection-img" />
+                </div>
+                <div className="collection-info">
+                  <h3 className="collection-title">{item.title}</h3>
+                  <p className="collection-subtitle">{item.subtitle}</p>
                 </div>
               </a>
             ))}
           </div>
 
-          <button className="carousel-arrow next-coll-arrow" onClick={nextSlide} aria-label="Next">
-            ❯
+          <button
+            onClick={scrollRight}
+            className="carousel-arrow next-coll-arrow"
+            aria-label="Next Collection"
+          >
+            ›
           </button>
         </div>
 
         {/* View All Collection Button */}
         <div className="explore-more-wrap">
-          <a href="#explore-collections" className="explore-more-btn">
+          <a href="#all-collections" className="explore-more-btn">
             View All Collection
           </a>
         </div>

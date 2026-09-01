@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionHeader from './SectionHeader';
 
 const products = [
   {
@@ -47,10 +48,10 @@ export default function FeaturedProducts({ onAddToCart, onToggleWishlist }) {
   return (
     <section className="featured-products-section" id="products">
       <div className="container">
-        <div className="section-title-wrap">
-          <h2 className="category-heading">FEATURED PRODUCTS</h2>
-          <p className="category-subheading">Bestselling Gold & Diamond Designs</p>
-        </div>
+        <SectionHeader
+          title="FEATURED PRODUCTS"
+          subtitle="Bestselling Gold & Diamond Designs"
+        />
 
         <div className="products-grid">
           {products.map((prod) => (
