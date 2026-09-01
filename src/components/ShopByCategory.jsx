@@ -1,52 +1,88 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SectionHeader from './SectionHeader';
 
 const categories = [
   {
     id: 1,
     title: "Earrings",
-    img: "/images/Diamond_drop_earrings_displayed_202608261740.jpeg",
+    images: [
+      "/images/Diamond_drop_earrings_displayed_202608261740.jpeg",
+      "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg",
+      "/images/Woman_wearing_diamond_earrings_202608261739.jpeg"
+    ],
     link: "#earrings",
     isFullMobile: true
   },
   {
     id: 2,
     title: "Pendants",
-    img: "/images/necklace_hero.jpg",
+    images: [
+      "/images/necklace_hero.jpg",
+      "/images/Diamond_drop_earrings_displayed_202608261741.jpeg",
+      "/images/Woman_wearing_diamond_earrings_202608261740.jpeg"
+    ],
     link: "#pendants",
     isFullMobile: false
   },
   {
     id: 3,
     title: "Rings",
-    img: "/images/diamond_halo_ring.png",
+    images: [
+      "/images/diamond_halo_ring.png",
+      "/images/ring_hero.jpg",
+      "/images/Diamond_stud_earrings_in_setting_202608261741.jpeg"
+    ],
     link: "#rings",
     isFullMobile: false
   },
   {
     id: 4,
     title: "Bangles & Bracelets",
-    img: "/images/pave_gold_bracelet.png",
+    images: [
+      "/images/pave_gold_bracelet.png",
+      "/images/Diamond_bangle_product_shot_202608271248.jpeg",
+      "/images/Diamond_cuff_bracelet_photography_202608271248.jpeg"
+    ],
     link: "#bangles",
     isFullMobile: true
   },
   {
     id: 5,
     title: "Jewellery Sets",
-    img: "/images/tennis_diamond_necklace.png",
+    images: [
+      "/images/tennis_diamond_necklace.png",
+      "/images/craftsmanship_macro.png",
+      "/images/diamora_hero_widescreen_banner.png"
+    ],
     link: "#sets",
     isFullMobile: false
   },
   {
     id: 6,
-    title: "Mangalsutra",
-    img: "/images/Woman_wearing_diamond_drop_earrings_202608261759.jpeg",
+    title: "Mangalsutra & Nath",
+    images: [
+      "/images/Woman_wearing_diamond_drop_earrings_202608261759.jpeg",
+      "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg",
+      "/images/Ornate_diamond_Nath_product_photog_202608261758.jpeg"
+    ],
     link: "#mangalsutra",
     isFullMobile: false
   }
 ];
 
 export default function ShopByCategory() {
+  const [imageIndices, setImageIndices] = useState([0, 0, 0, 0, 0, 0]);
+
+  // Auto-switch card images every 5 seconds (5000ms)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setImageIndices((prev) =>
+        prev.map((idx, catIdx) => (idx + 1) % categories[catIdx].images.length)
+      );
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="py-6 md:py-12 bg-white" id="shop-by-category">
       <div className="max-w-[1340px] mx-auto px-3 sm:px-5">
@@ -57,7 +93,7 @@ export default function ShopByCategory() {
 
         {/* Asymmetric Mobile & 3-Col Desktop Category Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-4">
-          {categories.map((cat) => (
+          {categories.map((cat, index) => (
             <a
               key={cat.id}
               href={cat.link}
@@ -66,21 +102,29 @@ export default function ShopByCategory() {
               }`}
             >
               <div
-                className={`w-full overflow-hidden ${
+                className={`relative w-full overflow-hidden ${
                   cat.isFullMobile
                     ? 'h-[160px] sm:h-[200px] md:h-[230px]'
                     : 'h-[135px] sm:h-[170px] md:h-[230px]'
                 }`}
               >
-                <img
-                  src={cat.img}
-                  alt={cat.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                />
+                {/* 5-Second Crossfading Image Stack */}
+                {cat.images.map((imgUrl, imgIdx) => (
+                  <img
+                    key={imgIdx}
+                    src={imgUrl}
+                    alt={cat.title}
+                    className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out group-hover:scale-105 ${
+                      imgIdx === imageIndices[index]
+                        ? 'opacity-100 z-10'
+                        : 'opacity-0 z-0'
+                    }`}
+                  />
+                ))}
               </div>
 
               {/* Title Overlay / Badge */}
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-2.5 pt-6 text-center">
+              <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-2.5 pt-6 text-center">
                 <span className="font-sans text-xs sm:text-sm md:text-base font-semibold text-white tracking-wide drop-shadow-sm">
                   {cat.title}
                 </span>
