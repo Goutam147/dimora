@@ -12,11 +12,22 @@ const slides = [
     img: "/images/craftsmanship_macro.png",
     alt: "Fine Jewellery Craftsmanship & Heritage",
     link: "#craftsmanship"
+  },
+  {
+    id: 3,
+    img: "/images/hero_solitaire_ring_1788174359621.png",
+    alt: "Solitaire Collection",
+    link: "#solitaires"
   }
 ];
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // Minimum swipe distance in px
+  const minSwipeDistance = 35;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -28,30 +39,68 @@ export default function HeroSlider() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
+  // Touch Swipe Handlers for Finger Scrolling
+  const handleTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
-    <section className="hero-banner-section">
-      <div className="hero-slider">
+    <section className="bg-white overflow-hidden" id="hero">
+      {/* Hero Banner Image Box */}
+      <div
+        className="relative w-full h-[240px] sm:h-[380px] md:h-[480px] bg-[#F4F4F4] overflow-hidden select-none cursor-grab active:cursor-grabbing"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
+              index === currentSlide ? 'opacity-100 z-10 pointer-events-auto' : 'opacity-0 z-0 pointer-events-none'
+            }`}
           >
-            <a href={slide.link}>
-              <img src={slide.img} alt={slide.alt} className="hero-banner-img" />
+            <a href={slide.link} className="block w-full h-full">
+              <img
+                src={slide.img}
+                alt={slide.alt}
+                className="w-full h-full object-cover object-center"
+              />
             </a>
           </div>
         ))}
       </div>
 
-      <button className="slider-arrow prev-arrow" onClick={prevSlide} aria-label="Previous">❮</button>
-      <button className="slider-arrow next-arrow" onClick={nextSlide} aria-label="Next">❯</button>
-
-      <div className="slider-dots-container">
+      {/* Pill-Style Bottom Pagination Dots Container matching Screenshot 1 */}
+      <div className="flex items-center justify-center gap-2 py-3 bg-white">
         {slides.map((_, index) => (
-          <span
+          <button
             key={index}
-            className={`dot ${index === currentSlide ? 'active' : ''}`}
             onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+            className={`transition-all duration-300 rounded-full cursor-pointer border-none outline-none ${
+              index === currentSlide
+                ? 'w-8 h-2.5 bg-[#B82A45] shadow-xs'
+                : 'w-2.5 h-2.5 bg-[#F8DFD2] hover:bg-[#E79F67]'
+            }`}
           />
         ))}
       </div>
