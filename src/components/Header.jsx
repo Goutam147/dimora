@@ -134,57 +134,69 @@ export default function Header({ wishlistCount, cartCount }) {
 
           {/* Floating Dropdown Card (Shown when Clicking 3 Lines) */}
           {menuOpen && (
-            <div className="absolute top-[135%] right-0 z-50 bg-white rounded-xl shadow-2xl border border-[#F0DEC9] p-4 w-[220px] transition-all duration-200">
+            <div className="absolute top-[130%] right-0 z-50 bg-white rounded-lg shadow-xl border border-[#E8E8E8] p-3.5 w-[225px] transition-all duration-200">
               {/* Top Pointer Arrow */}
-              <div className="absolute -top-2 right-3.5 w-3.5 h-3.5 bg-white rotate-45 border-l border-t border-[#F0DEC9]"></div>
+              <div className="absolute -top-2 right-4 w-3.5 h-3.5 bg-white rotate-45 border-l border-t border-[#E8E8E8] z-20"></div>
 
-              <div className="flex flex-col gap-3 relative z-10 text-xs font-semibold text-[#111111]">
+              <div className="flex flex-col gap-1 relative z-10">
                 {/* Item 1: Diamond Certificate */}
                 <a
                   href="#diamond-certificate"
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-[#FAF3EB] text-[#111111] hover:text-[#C5283C] transition-colors"
+                  className="flex items-center gap-3.5 py-2.5 px-3 rounded-md hover:bg-[#FDF6EE] transition-colors group"
                 >
-                  <div className="w-7 h-7 rounded-full bg-[#FAF3EB] border border-[#F0DEC9] flex items-center justify-center shrink-0">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="2">
-                      <polygon points="12 2 2 8 12 22 22 8 12 2" />
-                      <polyline points="2 8 12 13 22 8" />
-                      <line x1="12" y1="2" x2="12" y2="13" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" stroke="#B82A45" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M16 27L4 12L10 4H22L28 12L16 27Z" />
+                      <path d="M4 12H28" />
+                      <path d="M10 4L16 12L22 4" />
+                      <path d="M16 12V27" />
+                      <path d="M2 7L5 9" />
+                      <path d="M5 3L7 6" />
+                      <path d="M30 7L27 9" />
+                      <path d="M27 3L25 6" />
                     </svg>
                   </div>
-                  <span className="font-sans text-xs">Diamond Certificate</span>
+                  <span className="font-sans text-[0.88rem] font-normal text-[#111111] group-hover:text-[#B82A45] transition-colors leading-tight">
+                    Diamond Certificate
+                  </span>
                 </a>
 
                 {/* Item 2: Gold Rate */}
                 <a
                   href="#gold-rate"
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-[#FAF3EB] text-[#111111] hover:text-[#C5283C] transition-colors"
+                  className="flex items-center gap-3.5 py-2.5 px-3 rounded-md hover:bg-[#FDF6EE] transition-colors group"
                 >
-                  <div className="w-7 h-7 rounded-full bg-[#FAF3EB] border border-[#F0DEC9] flex items-center justify-center shrink-0">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="2">
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M9 8h6M9 12h6M9 8c2 0 3 1 3 2.5S11 13 9 13l6 5" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" stroke="#B82A45" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="16" cy="16" r="12.5" />
+                      <circle cx="16" cy="16" r="10.2" strokeDasharray="1.5 2" />
+                      <path d="M12 11h8M12 14.5h7M12 11v9M12 14.5c2.5 0 4-1 4-2.5S14.5 9.5 12 9.5M16 14.5l5 6.5" strokeWidth="1.5" />
                     </svg>
                   </div>
-                  <span className="font-sans text-xs">Gold Rate</span>
+                  <span className="font-sans text-[0.88rem] font-normal text-[#111111] group-hover:text-[#B82A45] transition-colors leading-tight">
+                    Gold Rate
+                  </span>
                 </a>
 
                 {/* Item 3: Advance Booking */}
                 <a
                   href="#advance-booking"
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-[#FAF3EB] text-[#111111] hover:text-[#C5283C] transition-colors"
+                  className="flex items-center gap-3.5 py-2.5 px-3 rounded-md hover:bg-[#FDF6EE] transition-colors group"
                 >
-                  <div className="w-7 h-7 rounded-full bg-[#FAF3EB] border border-[#F0DEC9] flex items-center justify-center shrink-0">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                      <line x1="16" y1="2" x2="16" y2="6" />
-                      <line x1="8" y1="2" x2="8" y2="6" />
-                      <line x1="3" y1="10" x2="21" y2="10" />
+                  <div className="shrink-0 flex items-center justify-center">
+                    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" stroke="#B82A45" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="5" y="8" width="22" height="19" rx="3" />
+                      <line x1="5" y1="14" x2="27" y2="14" />
+                      <line x1="10" y1="5" x2="10" y2="9" strokeWidth="2.2" />
+                      <line x1="22" y1="5" x2="22" y2="9" strokeWidth="2.2" />
                     </svg>
                   </div>
-                  <span className="font-sans text-xs">Advance Booking</span>
+                  <span className="font-sans text-[0.88rem] font-normal text-[#111111] group-hover:text-[#B82A45] transition-colors leading-tight">
+                    Advance Booking
+                  </span>
                 </a>
               </div>
             </div>
