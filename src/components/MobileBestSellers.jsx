@@ -68,19 +68,21 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
   const [activeDot, setActiveDot] = useState(0);
   const scrollRef = useRef(null);
 
-  // Auto-scroll products horizontally from Right to Left every 5 seconds
+  // Auto-scroll 1 product card at a time from Right to Left every 5 seconds
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
 
     const intervalId = setInterval(() => {
       const maxScroll = container.scrollWidth - container.clientWidth;
-      const scrollStep = container.clientWidth; // scroll one screen pair at a time
+      // Single product card width + gap (approx half client width)
+      const singleCardWidth = (container.clientWidth / 2) + 6;
 
       if (container.scrollLeft >= maxScroll - 15) {
+        // Smoothly loop back to start right-to-left
         container.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        container.scrollBy({ left: singleCardWidth, behavior: 'smooth' });
       }
     }, 5000);
 
@@ -120,7 +122,7 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
           subtitle="Love the most to bought the most"
         />
 
-        {/* Horizontal Touch-Scrollable Product Row (2 cards visible, finger swipe + 5s auto-shift) */}
+        {/* Horizontal Touch-Scrollable Product Row (shifts 1 product per 5s) */}
         <div
           ref={scrollRef}
           onScroll={handleScroll}
