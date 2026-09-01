@@ -64,6 +64,9 @@ const bestSellers = [
   }
 ];
 
+// Duplicate products array for seamless infinite right-to-left loop
+const infiniteBestSellers = [...bestSellers, ...bestSellers, ...bestSellers];
+
 export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
   const [activeDot, setActiveDot] = useState(0);
   const scrollRef = useRef(null);
@@ -74,13 +77,15 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
     if (!container) return;
 
     const intervalId = setInterval(() => {
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      // Single product card width + gap (approx half client width)
       const singleCardWidth = (container.clientWidth / 2) + 6;
+      const maxScroll = container.scrollWidth - container.clientWidth;
 
-      if (container.scrollLeft >= maxScroll - 15) {
-        // Smoothly loop back to start right-to-left
-        container.scrollTo({ left: 0, behavior: 'smooth' });
+      if (container.scrollLeft >= maxScroll - singleCardWidth) {
+        // Silently reset to start position without backward animation
+        container.scrollTo({ left: 0, behavior: 'auto' });
+        setTimeout(() => {
+          container.scrollBy({ left: singleCardWidth, behavior: 'smooth' });
+        }, 50);
       } else {
         container.scrollBy({ left: singleCardWidth, behavior: 'smooth' });
       }
@@ -93,22 +98,17 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
   const handleScroll = () => {
     const container = scrollRef.current;
     if (!container) return;
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    if (maxScroll <= 0) return;
-
-    const progress = container.scrollLeft / maxScroll;
-    const dotIndex = Math.min(
-      Math.round(progress * 4),
-      4
-    );
-    setActiveDot(dotIndex);
+    const singleCardWidth = (container.clientWidth / 2) + 6;
+    const cardIndex = Math.floor((container.scrollLeft + 10) / singleCardWidth);
+    const normalizedDot = cardIndex % bestSellers.length;
+    setActiveDot(Math.min(normalizedDot, 4));
   };
 
   const scrollToPage = (pageIndex) => {
     const container = scrollRef.current;
     if (!container) return;
-    const maxScroll = container.scrollWidth - container.clientWidth;
-    const targetLeft = (pageIndex / 4) * maxScroll;
+    const singleCardWidth = (container.clientWidth / 2) + 6;
+    const targetLeft = pageIndex * singleCardWidth;
     container.scrollTo({ left: targetLeft, behavior: 'smooth' });
     setActiveDot(pageIndex);
   };
@@ -122,16 +122,16 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
           subtitle="Love the most to bought the most"
         />
 
-        {/* Horizontal Touch-Scrollable Product Row (shifts 1 product per 5s) */}
+        {/* Horizontal Touch-Scrollable Product Row (Always shifts Right to Left) */}
         <div
           ref={scrollRef}
           onScroll={handleScroll}
           className="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth w-full py-1.5 mt-3 select-none snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {bestSellers.map((item) => (
+          {infiniteBestSellers.map((item, idx) => (
             <div
-              key={item.id}
+              key={`${item.id}-${idx}`}
               className="group shrink-0 w-[calc(50%-6px)] flex flex-col bg-white snap-start"
             >
               {/* Product Image Box */}
