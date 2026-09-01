@@ -69,7 +69,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="bg-white overflow-hidden" id="hero">
+    <section className="bg-white overflow-hidden p-0" id="hero">
       {/* Hero Banner Image Box */}
       <div
         className="relative w-full h-[240px] sm:h-[380px] md:h-[480px] bg-[#F4F4F4] overflow-hidden select-none cursor-grab active:cursor-grabbing"
@@ -96,7 +96,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Pill-Style Bottom Pagination Dots Container */}
-      <div className="flex items-center justify-center gap-2 py-3 bg-white">
+      <div className="flex items-center justify-center gap-2 py-1.5 md:py-3 bg-white">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -104,8 +104,8 @@ export default function HeroSlider() {
             aria-label={`Go to slide ${index + 1}`}
             className={`transition-all duration-300 rounded-full cursor-pointer border-none outline-none ${
               index === currentSlide
-                ? 'w-8 h-2.5 bg-[#B82A45] shadow-xs'
-                : 'w-2.5 h-2.5 bg-[#F8DFD2] hover:bg-[#E79F67]'
+                ? 'w-8 h-2 bg-[#B82A45] shadow-xs'
+                : 'w-2 h-2 bg-[#F8DFD2] hover:bg-[#E79F67]'
             }`}
           />
         ))}

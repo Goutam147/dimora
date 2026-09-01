@@ -1209,34 +1209,42 @@ body {
         display: none !important;
     }
 
+    #hero {
+        padding: 0 !important;
+    }
+
     /* Reduce Section Heading Text Size & Spacing on Mobile */
     .category-heading {
-        font-size: 1.3rem !important;
+        font-size: 1.25rem !important;
         letter-spacing: 1px !important;
-        margin-bottom: 3px !important;
+        margin-bottom: 2px !important;
     }
 
     .category-subheading {
-        font-size: 0.82rem !important;
+        font-size: 0.8rem !important;
     }
 
     .section-title-wrap {
-        margin-bottom: 18px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .diamond-ornament-wrap {
+        margin-bottom: 4px !important;
     }
 
     .ornament-line {
-        width: 35px !important;
+        width: 32px !important;
     }
 
     /* Reduce vertical padding between sections on Mobile */
     section {
-        padding-top: 24px !important;
-        padding-bottom: 24px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
     }
 
     .category-grid-section, .featured-products-section {
-        padding-top: 24px !important;
-        padding-bottom: 24px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
     }
 
     /* Hide overflowing side carousel arrows on mobile */
