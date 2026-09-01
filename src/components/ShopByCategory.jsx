@@ -142,8 +142,8 @@ export default function ShopByCategory() {
                   </div>
                 </div>
 
-                {/* Web / Desktop Only: Title Below Image */}
-                <span className="hidden md:block font-serif text-lg font-semibold text-[#111111] group-hover:text-[#B30018] transition-colors mt-3 text-center tracking-wide">
+                {/* Web / Desktop Only: Title Below Image with Original CSS Class */}
+                <span className="hidden md:block cat-rect-title mt-2.5">
                   {cat.title}
                 </span>
               </a>
