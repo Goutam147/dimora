@@ -15,63 +15,48 @@ export default function InstagramSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mb-20">
           {/* Left Column (2 Stacked Landscape Cards) */}
           <div className="flex flex-col gap-5">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
               <img
                 src="/images/necklace_hero.jpg"
                 alt="Instagram Feed Jewellery 1"
                 className="w-full h-full object-cover object-center rounded-2xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-3xl">📸</span>
-              </div>
             </a>
 
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
               <img
                 src="/images/craftsmanship_macro.png"
                 alt="Instagram Feed Jewellery 2"
                 className="w-full h-full object-cover object-center rounded-2xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-3xl">📸</span>
-              </div>
             </a>
           </div>
 
           {/* Middle Column (Tall Vertical Portrait Card) */}
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-[420px] rounded-2xl overflow-hidden shadow-sm bg-[#111111]">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group block w-full h-[420px] rounded-2xl overflow-hidden shadow-sm bg-[#111111]">
             <img
               src="/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg"
               alt="Instagram Featured Model Story"
               className="w-full h-full object-cover object-center rounded-2xl transition-transform duration-500 ease-out group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span className="text-white text-4xl">📸</span>
-            </div>
           </a>
 
           {/* Right Column (2 Stacked Landscape Cards) */}
           <div className="flex flex-col gap-5">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
               <img
                 src="/images/tennis_diamond_necklace.png"
                 alt="Instagram Feed Jewellery 3"
                 className="w-full h-full object-cover object-center rounded-2xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-3xl">📸</span>
-              </div>
             </a>
 
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
               <img
                 src="/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg"
                 alt="Instagram Feed Jewellery 4"
                 className="w-full h-full object-cover object-center rounded-2xl transition-transform duration-500 ease-out group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span className="text-white text-3xl">📸</span>
-              </div>
             </a>
           </div>
         </div>
