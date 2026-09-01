@@ -92,7 +92,7 @@ export default function ShopByCategory() {
         />
 
         {/* Asymmetric Mobile & 3-Col Desktop Category Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8 mt-4">
           {categories.map((cat, index) => {
             const currentIdx = imageIndices[index];
 
@@ -100,12 +100,13 @@ export default function ShopByCategory() {
               <a
                 key={cat.id}
                 href={cat.link}
-                className={`group relative rounded-2xl overflow-hidden shadow-xs border border-[#F2E6D8] bg-white transition-all duration-300 hover:shadow-md hover:border-[#B30018] ${
+                className={`group flex flex-col items-center text-decoration-none ${
                   cat.isFullMobile ? 'col-span-2 md:col-span-1' : 'col-span-1'
                 }`}
               >
+                {/* Image Box */}
                 <div
-                  className={`relative w-full overflow-hidden ${
+                  className={`relative w-full rounded-2xl overflow-hidden shadow-xs border border-[#F2E6D8] bg-white transition-all duration-300 group-hover:shadow-md group-hover:border-[#B30018] ${
                     cat.isFullMobile
                       ? 'h-[160px] sm:h-[200px] md:h-[230px]'
                       : 'h-[135px] sm:h-[170px] md:h-[230px]'
@@ -132,21 +133,26 @@ export default function ShopByCategory() {
                       />
                     );
                   })}
+
+                  {/* Mobile Only: Title Overlay over image (Hidden on Desktop) */}
+                  <div className="md:hidden absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-2.5 pt-6 text-center">
+                    <span className="font-sans text-xs sm:text-sm font-semibold text-white tracking-wide drop-shadow-sm">
+                      {cat.title}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Title Overlay / Badge */}
-                <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-2.5 pt-6 text-center">
-                  <span className="font-sans text-xs sm:text-sm md:text-base font-semibold text-white tracking-wide drop-shadow-sm">
-                    {cat.title}
-                  </span>
-                </div>
+                {/* Web / Desktop Only: Title Below Image */}
+                <span className="hidden md:block font-serif text-lg font-semibold text-[#111111] group-hover:text-[#B30018] transition-colors mt-3 text-center tracking-wide">
+                  {cat.title}
+                </span>
               </a>
             );
           })}
         </div>
 
         {/* View All Categories Button */}
-        <div className="text-center mt-6 md:mt-8">
+        <div className="text-center mt-6 md:mt-10">
           <a
             href="#all-categories"
             className="inline-block border-[1.5px] border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-md transition-all duration-200"
