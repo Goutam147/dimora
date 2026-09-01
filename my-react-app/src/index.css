@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Tailwind Component Classes & Utility Overrides */
+@layer components {
+  .top-announcement-bar {
+    @apply bg-brand-red text-white text-center py-1.5 px-2.5 text-xs font-medium;
+  }
+  .join-scheme-link {
+    @apply text-white underline font-semibold ml-1;
+  }
+
+  .main-header {
+    @apply bg-white border-b border-gray-100 py-3;
+  }
+
+  .header-util {
+    @apply flex items-center gap-1.5 text-xs font-medium text-text-dark hover:text-brand-red transition-colors;
+  }
+
+  .search-box {
+    @apply flex items-center border border-gray-300 rounded px-3.5 py-1.5 bg-white transition-colors focus-within:border-brand-red;
+  }
+
+  .country-pill {
+    @apply flex items-center gap-1.5 border border-gray-300 rounded-full px-3.5 py-1 text-xs font-medium cursor-pointer bg-white;
+  }
+
+  .gold-scheme-badge {
+    @apply flex items-center gap-2 cursor-pointer;
+  }
+
+  .badge-count {
+    @apply absolute -top-1.5 -right-2 bg-brand-red text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center;
+  }
+
+  .main-navbar {
+    @apply bg-white border-b border-border-gray;
+  }
+
+  .offers-pill {
+    @apply bg-gold-pill text-white font-bold px-3.5 py-1 rounded-full text-xs inline-flex items-center gap-1;
+  }
+
+  .percent-badge {
+    @apply bg-black/15 rounded-full w-4 h-4 inline-flex items-center justify-center text-[11px];
+  }
+
+  .mega-menu {
+    @apply absolute top-full left-0 bg-white shadow-xl rounded-b-lg p-5 flex gap-7 opacity-0 invisible transition-all duration-200 z-50 min-w-[550px] border-t-2 border-brand-red;
+  }
+
+  .nav-link-item:hover .mega-menu {
+    @apply opacity-100 visible;
+  }
+
+  .hero-banner-section {
+    @apply relative w-full bg-gray-100 overflow-hidden;
+  }
+
+  .slider-arrow {
+    @apply absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-black/40 text-white rounded-full flex items-center justify-center text-lg transition-colors z-10 hover:bg-brand-red/80;
+  }
+
+  .prev-arrow { @apply left-5; }
+  .next-arrow { @apply right-5; }
+
+  .dot {
+    @apply w-2.5 h-2.5 rounded-full bg-white/50 cursor-pointer transition-all;
+  }
+
+  .dot.active {
+    @apply bg-brand-red w-6 rounded-lg;
+  }
+}
