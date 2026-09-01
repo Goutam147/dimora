@@ -3,16 +3,94 @@ import SectionHeader from './SectionHeader';
 
 export default function InstagramSection() {
   return (
-    <section className="py-14 bg-white overflow-hidden" id="instagram">
-      <div className="max-w-[1340px] mx-auto px-5">
+    <section className="py-4 md:py-14 bg-white overflow-hidden" id="instagram">
+      <div className="max-w-[1340px] mx-auto px-3 sm:px-5">
         {/* Section Header */}
         <SectionHeader
-          title="FOLLOW US ON INSTAGRAM"
+          title="Follow us on Instagram"
           subtitle="Stay Updated with Our Stories and Updates on Instagram"
         />
 
-        {/* 3 Column Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mb-20">
+        {/* MOBILE RESPONSIVE INSTAGRAM GRID (Matching Reference Screenshot 1:1) */}
+        <div className="block md:hidden mt-3 mb-8">
+          {/* Row 1: 2 Equal Top Cards */}
+          <div className="grid grid-cols-2 gap-2.5">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-full h-[145px] sm:h-[180px] rounded-2xl overflow-hidden shadow-xs border border-[#F0E6DD]"
+            >
+              <img
+                src="/images/necklace_hero.jpg"
+                alt="Instagram Jewellery 1"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-full h-[145px] sm:h-[180px] rounded-2xl overflow-hidden shadow-xs border border-[#F0E6DD]"
+            >
+              <img
+                src="/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg"
+                alt="Instagram Jewellery 2"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+            </a>
+          </div>
+
+          {/* Row 2: Asymmetric Split Grid (Left Tall Portrait Card + Right 2 Stacked Cards) */}
+          <div className="grid grid-cols-2 gap-2.5 mt-2.5 items-stretch">
+            {/* Left Column: Tall Model Portrait Card */}
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block w-full h-[300px] sm:h-[370px] rounded-2xl overflow-hidden shadow-xs border border-[#F0E6DD]"
+            >
+              <img
+                src="/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg"
+                alt="Instagram Model Portrait"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+            </a>
+
+            {/* Right Column: 2 Stacked Landscape Cards */}
+            <div className="flex flex-col gap-2.5 justify-between">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block w-full h-[145px] sm:h-[180px] rounded-2xl overflow-hidden shadow-xs border border-[#F0E6DD]"
+              >
+                <img
+                  src="/images/tennis_diamond_necklace.png"
+                  alt="Instagram Jewellery 3"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block w-full h-[145px] sm:h-[180px] rounded-2xl overflow-hidden shadow-xs border border-[#F0E6DD]"
+              >
+                <img
+                  src="/images/diamond_halo_ring.png"
+                  alt="Instagram Jewellery 4"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ORIGINAL UNCHANGED DESKTOP INSTAGRAM GRID (Visible only on Web/Desktop >= 768px) */}
+        <div className="hidden md:grid grid-cols-3 gap-6 items-stretch mb-20 mt-6">
           {/* Left Column (2 Stacked Landscape Cards) */}
           <div className="flex flex-col gap-5">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group block w-full h-[200px] rounded-2xl overflow-hidden shadow-sm bg-[#0E4D64]">
@@ -63,7 +141,7 @@ export default function InstagramSection() {
 
         {/* Need Help Choosing Jewellery Section with 2 Overlapping Cards */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 max-w-[1240px] mx-auto pt-4">
-          {/* Left: 2 Overlapping Image Cards (Responsive for Mobile) */}
+          {/* Left: 2 Overlapping Image Cards */}
           <div className="relative w-full max-w-[340px] sm:max-w-[540px] h-[300px] sm:h-[370px] flex items-center justify-start mx-auto sm:mx-0">
             {/* Base Card 1 (Model Image) */}
             <div className="w-[200px] sm:w-[280px] h-[270px] sm:h-[360px] rounded-2xl overflow-hidden shadow-md border border-black/5 bg-[#F5EFE6] relative z-0">
@@ -99,13 +177,15 @@ export default function InstagramSection() {
                 href="#store-locator"
                 className="bg-[#C5283C] hover:bg-[#8F0013] text-white font-sans text-xs sm:text-sm font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-md transition-colors shadow-sm"
               >
-                Store Locator
+                STORE LOCATOR
               </a>
               <a
-                href="#request-callback"
-                className="border-[1.5px] border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white bg-white font-sans text-xs sm:text-sm font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-md transition-all duration-200"
+                href="https://wa.me/919888888887"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs sm:text-sm font-semibold px-5 py-2 sm:px-6 sm:py-2.5 rounded-md transition-colors"
               >
-                Request Call Back
+                CONNECT ON WHATSAPP
               </a>
             </div>
           </div>
