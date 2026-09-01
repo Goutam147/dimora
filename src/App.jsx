@@ -45,9 +45,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-text-dark font-sans pb-14 md:pb-0">
-      {/* Top Announcement Bar */}
-      <TopAnnouncementBar />
-
       {/* Sticky Header, Navbar & Mobile Categories Container */}
       <div className="sticky top-0 z-50 bg-white shadow-md transition-shadow">
         <Header wishlistCount={wishlistCount} cartCount={cartCount} />
