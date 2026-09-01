@@ -84,13 +84,16 @@ export default function Header({ wishlistCount, cartCount }) {
               </svg>
             </button>
 
-            {/* Brand Logo */}
-            <a href="/" className="brand-logo shrink-0 flex items-center">
+            {/* Brand Logo with 'D' Emblem + 'DIAMORA' Wordmark Text */}
+            <a href="/" className="brand-logo shrink-0 flex items-end gap-1.5 group">
               <img
                 src="/nav_logo.png"
-                alt="Diamora Jewellery Logo"
-                className="logo-img h-8 md:h-11 object-contain"
+                alt="Diamora Emblem"
+                className="logo-img h-9 md:h-12 object-contain"
               />
+              <span className="font-serif text-lg md:text-2xl font-medium tracking-[0.22em] text-[#B8860B] uppercase leading-none pb-0.5 group-hover:text-[#B30018] transition-colors">
+                DIAMORA
+              </span>
             </a>
           </div>
 
@@ -270,7 +273,12 @@ export default function Header({ wishlistCount, cartCount }) {
           <div className="relative w-[82%] max-w-[320px] bg-white h-full shadow-2xl flex flex-col z-50 animate-slideRight">
             {/* Drawer Header */}
             <div className="p-4 bg-[#FAF3EB] border-b border-[#F0DEC9] flex items-center justify-between">
-              <img src="/nav_logo.png" alt="Diamora" className="h-9 object-contain" />
+              <a href="/" className="flex items-end gap-1.5">
+                <img src="/nav_logo.png" alt="Diamora" className="h-9 object-contain" />
+                <span className="font-serif text-xl font-medium tracking-[0.2em] text-[#B8860B] uppercase leading-none pb-0.5">
+                  DIAMORA
+                </span>
+              </a>
               <button
                 onClick={() => setMobileDrawerOpen(false)}
                 className="text-[#333333] hover:text-[#C5283C] p-1 text-xl font-bold"

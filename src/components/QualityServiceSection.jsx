@@ -64,8 +64,8 @@ export default function QualityServiceSection() {
               alt="Diamora Logo"
               className="h-10 w-auto object-contain brightness-0 invert mb-2"
             />
-            <h3 className="font-serif italic text-2xl text-white font-normal tracking-wide">
-              Dimora
+            <h3 className="font-serif text-2xl text-white font-medium tracking-[0.2em] uppercase">
+              Diamora
             </h3>
             <p className="font-sans text-[0.62rem] text-white/90 uppercase tracking-[0.25em] font-semibold mt-1">
               India's favourite jeweller
