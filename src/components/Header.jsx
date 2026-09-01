@@ -91,7 +91,7 @@ export default function Header({ wishlistCount, cartCount }) {
                 alt="Diamora Emblem"
                 className="logo-img h-9 md:h-12 object-contain"
               />
-              <span className="font-serif text-lg md:text-2xl font-medium tracking-[0.22em] text-[#B8860B] uppercase leading-none pb-0.5 group-hover:text-[#B30018] transition-colors">
+              <span className="font-serif text-lg md:text-2xl font-semibold tracking-[0.22em] text-[#6C4B08] uppercase leading-none pb-0.5 group-hover:text-[#B30018] transition-colors">
                 DIAMORA
               </span>
             </a>
@@ -275,7 +275,7 @@ export default function Header({ wishlistCount, cartCount }) {
             <div className="p-4 bg-[#FAF3EB] border-b border-[#F0DEC9] flex items-center justify-between">
               <a href="/" className="flex items-end gap-1.5">
                 <img src="/nav_logo.png" alt="Diamora" className="h-9 object-contain" />
-                <span className="font-serif text-xl font-medium tracking-[0.2em] text-[#B8860B] uppercase leading-none pb-0.5">
+                <span className="font-serif text-xl font-semibold tracking-[0.2em] text-[#6C4B08] uppercase leading-none pb-0.5">
                   DIAMORA
                 </span>
               </a>
