@@ -9,15 +9,21 @@ const slides = [
   },
   {
     id: 2,
-    img: "/images/craftsmanship_macro.png",
-    alt: "Fine Jewellery Craftsmanship & Heritage",
-    link: "#craftsmanship"
+    img: "/images/necklace_hero.jpg",
+    alt: "Royal Diamond & Gemstone Necklace Collection",
+    link: "#necklaces"
   },
   {
     id: 3,
-    img: "/images/hero_solitaire_ring_1788174359621.png",
-    alt: "Solitaire Collection",
+    img: "/images/ring_hero.jpg",
+    alt: "Exclusive Solitaire Ring Collection",
     link: "#solitaires"
+  },
+  {
+    id: 4,
+    img: "/images/craftsmanship_macro.png",
+    alt: "Fine Jewellery Craftsmanship & Heritage",
+    link: "#craftsmanship"
   }
 ];
 
@@ -89,7 +95,7 @@ export default function HeroSlider() {
         ))}
       </div>
 
-      {/* Pill-Style Bottom Pagination Dots Container matching Screenshot 1 */}
+      {/* Pill-Style Bottom Pagination Dots Container */}
       <div className="flex items-center justify-center gap-2 py-3 bg-white">
         {slides.map((_, index) => (
           <button
