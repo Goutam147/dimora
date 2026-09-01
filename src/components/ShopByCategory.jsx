@@ -61,9 +61,9 @@ const categories = [
     id: 6,
     title: "Mangalsutra & Nath",
     images: [
-      "/images/Woman_wearing_diamond_drop_earrings_202608261759.jpeg",
       "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg",
-      "/images/Ornate_diamond_Nath_product_photog_202608261758.jpeg"
+      "/images/Diamond_Nath_product_photography_202608261800.jpeg",
+      "/images/Diamond_Nath_profile_view_202608261800.jpeg"
     ],
     link: "#mangalsutra",
     isFullMobile: false
