@@ -141,10 +141,10 @@ export default function InstagramSection() {
 
         {/* Need Help Choosing Jewellery Section (Matching Reference Screenshot 1:1) */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-12 max-w-[1240px] mx-auto pt-4">
-          {/* Left: 2 Overlapping Image Cards (Right Card Smaller) */}
-          <div className="relative w-full max-w-[290px] sm:max-w-[400px] h-[210px] sm:h-[280px] flex items-center justify-start mx-auto lg:mx-0">
+          {/* Left: 2 Overlapping Image Cards (Shifted Further Right) */}
+          <div className="relative w-full max-w-[305px] sm:max-w-[420px] h-[210px] sm:h-[280px] flex items-center justify-start mx-auto lg:mx-0">
             {/* Base Card 1 (Model Image - Larger) */}
-            <div className="w-[175px] sm:w-[240px] h-[195px] sm:h-[260px] rounded-2xl overflow-hidden shadow-md border border-black/5 bg-[#F5EFE6] relative z-0">
+            <div className="w-[170px] sm:w-[235px] h-[195px] sm:h-[260px] rounded-2xl overflow-hidden shadow-md border border-black/5 bg-[#F5EFE6] relative z-0">
               <img
                 src="/images/Woman_wearing_diamond_earrings_202608261740.jpeg"
                 alt="Model Wearing Jewellery"
@@ -152,8 +152,8 @@ export default function InstagramSection() {
               />
             </div>
 
-            {/* Overlapping Card 2 (Product Photography - Smaller) */}
-            <div className="absolute left-[115px] sm:left-[165px] top-[18px] sm:top-[24px] w-[145px] sm:w-[195px] h-[165px] sm:h-[220px] rounded-2xl overflow-hidden shadow-xl border-2 sm:border-4 border-white bg-[#4A121A] z-10 transition-transform duration-300 hover:scale-[1.02]">
+            {/* Overlapping Card 2 (Product Photography - Shifted Right) */}
+            <div className="absolute left-[135px] sm:left-[190px] top-[18px] sm:top-[24px] w-[145px] sm:w-[195px] h-[165px] sm:h-[220px] rounded-2xl overflow-hidden shadow-xl border-2 sm:border-4 border-white bg-[#4A121A] z-10 transition-transform duration-300 hover:scale-[1.02]">
               <img
                 src="/images/necklace_hero.jpg"
                 alt="Ruby & Diamond Necklace Set"
