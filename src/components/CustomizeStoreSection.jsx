@@ -13,43 +13,17 @@ export default function CustomizeStoreSection() {
 
         {/* MOBILE RESPONSIVE LAYOUT (Matching Reference Screenshot 1:1) */}
         <div className="block md:hidden space-y-3 mt-3">
-          {/* Row 1: Full-Width World Map Store Locator Banner Card */}
-          <div className="relative w-full h-[185px] sm:h-[220px] rounded-2xl overflow-hidden bg-gradient-to-r from-[#FAF0D9] via-[#F6D5C7] to-[#F1BCC0] p-4 sm:p-6 flex items-center justify-between shadow-xs border border-[#F2E6D8]">
-            <div className="relative z-10 max-w-[58%] flex flex-col justify-center items-start">
-              <span className="font-serif italic text-sm sm:text-base text-[#6A0C24] font-medium leading-tight">
-                13 countries, 200+ showrooms
-              </span>
-              <h3 className="font-serif text-lg sm:text-xl font-semibold text-[#5A0A1E] italic mt-0.5 mb-3 leading-tight">
-                Every location tells a Story of joy
-              </h3>
-              <a
-                href="#locate-store"
-                className="bg-[#6A0C24] hover:bg-[#8F0013] text-white font-sans text-[0.62rem] font-semibold px-3 py-1.5 rounded uppercase tracking-wider shadow-xs transition-colors"
-              >
-                LOCATE STORE
-              </a>
-            </div>
-
-            {/* Stylized World Map Graphic */}
-            <div className="w-[40%] h-full flex items-center justify-end opacity-90 pointer-events-none">
-              <svg viewBox="0 0 500 280" className="w-full h-auto max-h-[140px]">
-                <g fill="#B30018">
-                  <circle cx="140" cy="90" r="7" />
-                  <text x="140" y="75" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#5A0A1E">USA</text>
-                  <circle cx="180" cy="70" r="7" fill="#B30018" />
-                  <text x="180" y="55" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#B30018">CANADA</text>
-                  <circle cx="260" cy="85" r="7" />
-                  <text x="260" y="70" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#5A0A1E">UK</text>
-                  <circle cx="310" cy="115" r="7" />
-                  <text x="310" y="100" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#5A0A1E">UAE</text>
-                  <circle cx="335" cy="130" r="7" />
-                  <text x="335" y="115" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#5A0A1E">INDIA</text>
-                  <circle cx="410" cy="165" r="7" />
-                  <text x="410" y="150" fontSize="13" fontWeight="bold" textAnchor="middle" fill="#5A0A1E">AUSTRALIA</text>
-                </g>
-              </svg>
-            </div>
-          </div>
+          {/* Row 1: Single Complete Store Locator Banner Image */}
+          <a
+            href="#locate-store"
+            className="group block relative w-full h-[180px] sm:h-[220px] rounded-2xl overflow-hidden shadow-xs border border-[#F0DEC9]"
+          >
+            <img
+              src="/images/world_map_store_banner.png"
+              alt="13 countries, 200+ showrooms - Locate Store"
+              className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-300"
+            />
+          </a>
 
           {/* Row 2: 3 Equal Column Cards (Store Locator, Book Piercing, Expert Advice) */}
           <div className="grid grid-cols-3 gap-2.5 sm:gap-4 mt-3">
