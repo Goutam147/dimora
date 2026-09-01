@@ -73,7 +73,7 @@ const categories = [
 export default function ShopByCategory() {
   const [imageIndices, setImageIndices] = useState([0, 0, 0, 0, 0, 0]);
 
-  // Auto-switch card images every 5 seconds (5000ms)
+  // Auto-switch card images every 5 seconds (5000ms) with right-to-left slide
   useEffect(() => {
     const timer = setInterval(() => {
       setImageIndices((prev) =>
@@ -93,44 +93,56 @@ export default function ShopByCategory() {
 
         {/* Asymmetric Mobile & 3-Col Desktop Category Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-4">
-          {categories.map((cat, index) => (
-            <a
-              key={cat.id}
-              href={cat.link}
-              className={`group relative rounded-2xl overflow-hidden shadow-xs border border-[#F2E6D8] bg-white transition-all duration-300 hover:shadow-md hover:border-[#B30018] ${
-                cat.isFullMobile ? 'col-span-2 md:col-span-1' : 'col-span-1'
-              }`}
-            >
-              <div
-                className={`relative w-full overflow-hidden ${
-                  cat.isFullMobile
-                    ? 'h-[160px] sm:h-[200px] md:h-[230px]'
-                    : 'h-[135px] sm:h-[170px] md:h-[230px]'
+          {categories.map((cat, index) => {
+            const currentIdx = imageIndices[index];
+
+            return (
+              <a
+                key={cat.id}
+                href={cat.link}
+                className={`group relative rounded-2xl overflow-hidden shadow-xs border border-[#F2E6D8] bg-white transition-all duration-300 hover:shadow-md hover:border-[#B30018] ${
+                  cat.isFullMobile ? 'col-span-2 md:col-span-1' : 'col-span-1'
                 }`}
               >
-                {/* 5-Second Crossfading Image Stack */}
-                {cat.images.map((imgUrl, imgIdx) => (
-                  <img
-                    key={imgIdx}
-                    src={imgUrl}
-                    alt={cat.title}
-                    className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out group-hover:scale-105 ${
-                      imgIdx === imageIndices[index]
-                        ? 'opacity-100 z-10'
-                        : 'opacity-0 z-0'
-                    }`}
-                  />
-                ))}
-              </div>
+                <div
+                  className={`relative w-full overflow-hidden ${
+                    cat.isFullMobile
+                      ? 'h-[160px] sm:h-[200px] md:h-[230px]'
+                      : 'h-[135px] sm:h-[170px] md:h-[230px]'
+                  }`}
+                >
+                  {/* Right-to-Left Slide Animation Image Stack */}
+                  {cat.images.map((imgUrl, imgIdx) => {
+                    let positionClass = 'translate-x-full opacity-0 z-0';
 
-              {/* Title Overlay / Badge */}
-              <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-2.5 pt-6 text-center">
-                <span className="font-sans text-xs sm:text-sm md:text-base font-semibold text-white tracking-wide drop-shadow-sm">
-                  {cat.title}
-                </span>
-              </div>
-            </a>
-          ))}
+                    if (imgIdx === currentIdx) {
+                      positionClass = 'translate-x-0 opacity-100 z-10';
+                    } else if (
+                      imgIdx === (currentIdx - 1 + cat.images.length) % cat.images.length
+                    ) {
+                      positionClass = '-translate-x-full opacity-0 z-0';
+                    }
+
+                    return (
+                      <img
+                        key={imgIdx}
+                        src={imgUrl}
+                        alt={cat.title}
+                        className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 ease-in-out group-hover:scale-105 ${positionClass}`}
+                      />
+                    );
+                  })}
+                </div>
+
+                {/* Title Overlay / Badge */}
+                <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-black/75 via-black/35 to-transparent p-2.5 pt-6 text-center">
+                  <span className="font-sans text-xs sm:text-sm md:text-base font-semibold text-white tracking-wide drop-shadow-sm">
+                    {cat.title}
+                  </span>
+                </div>
+              </a>
+            );
+          })}
         </div>
 
         {/* View All Categories Button */}
