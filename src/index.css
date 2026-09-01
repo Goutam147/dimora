@@ -76,18 +76,18 @@ button {
 .main-header {
     background: #FFFFFF;
     border-bottom: 1px solid #EFEFEF;
-    padding: 12px 0;
+    padding: 6px 0;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 18px;
 }
 
 .logo-img {
-    height: 48px;
+    height: 38px;
     width: auto;
     object-fit: contain;
 }
@@ -123,7 +123,7 @@ button {
     align-items: center;
     border: 1px solid #CCC;
     border-radius: 4px;
-    padding: 6px 14px;
+    padding: 4px 12px;
     background: #FFFFFF;
     transition: border-color 0.2s ease;
 }
@@ -151,7 +151,7 @@ button {
     gap: 6px;
     border: 1px solid #DDD;
     border-radius: 20px;
-    padding: 4px 14px;
+    padding: 3px 10px;
     font-size: 0.82rem;
     font-weight: 500;
     cursor: pointer;
@@ -242,8 +242,8 @@ button {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 12px 0;
-    font-size: 0.86rem;
+    padding: 7px 0;
+    font-size: 0.84rem;
     font-weight: 500;
     color: #333333;
     transition: color 0.2s ease;
