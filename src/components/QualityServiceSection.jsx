@@ -57,8 +57,8 @@ export default function QualityServiceSection() {
       <div className="max-w-[1340px] mx-auto px-0 sm:px-5">
         {/* MOBILE RESPONSIVE LAYOUT (Matching Reference Screenshot 1:1) */}
         <div className="block md:hidden space-y-0">
-          {/* Row 1: Crimson Brand Suite Banner Card */}
-          <div className="w-full h-[190px] bg-[#B30018] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden">
+          {/* Row 1: Black Brand Suite Banner Card */}
+          <div className="w-full h-[190px] bg-[#111111] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden">
             <img
               src="/nav_logo.png"
               alt="Diamora Logo"
