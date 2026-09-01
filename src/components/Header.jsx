@@ -87,8 +87,8 @@ export default function Header({ wishlistCount, cartCount }) {
             {/* Brand Logo */}
             <a href="/" className="brand-logo shrink-0 flex items-center">
               <img
-                src="/diamora_logo.png"
-                alt="Dimora Jewellery Logo"
+                src="/diamora_horizontal_logo.png"
+                alt="Diamora Jewellery Logo"
                 className="logo-img h-8 md:h-11 object-contain"
               />
             </a>
