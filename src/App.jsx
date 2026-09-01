@@ -7,6 +7,7 @@ import MobileBottomNav from './components/MobileBottomNav';
 import HeroSlider from './components/HeroSlider';
 import ShopByCategory from './components/ShopByCategory';
 import ExclusiveBrandsSection from './components/ExclusiveBrandsSection';
+import MobileShopByPrice from './components/MobileShopByPrice';
 import DiamondJewellery from './components/DiamondJewellery';
 import CollectionsSection from './components/CollectionsSection';
 import ExploreJewellery from './components/ExploreJewellery';
@@ -58,9 +59,10 @@ export default function App() {
         <HeroSlider />
         <ShopByCategory />
 
-        {/* Mobile View Only: Exclusive Brands Section right after Shop By Category */}
+        {/* Mobile View Only Sections (Exclusive Brands + Shop By Price) */}
         <div className="block md:hidden">
           <ExclusiveBrandsSection />
+          <MobileShopByPrice />
         </div>
 
         <DiamondJewellery />
