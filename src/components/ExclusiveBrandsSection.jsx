@@ -121,12 +121,12 @@ export default function ExclusiveBrandsSection() {
           </div>
         </div>
 
-        {/* ORIGINAL UNCHANGED DESKTOP LAYOUT (Visible only on Web/Desktop >= 768px) */}
-        <div className="hidden md:block relative items-center mt-6">
-          {/* Left Arrow Button (Desktop Only) */}
+        {/* PERFECTLY ALIGNED DESKTOP CAROUSEL (Visible only on Web/Desktop >= 768px) */}
+        <div className="hidden md:block relative mt-6 px-4">
+          {/* Left Arrow Button (Desktop Only - Vertically Centered) */}
           <button
             onClick={scrollLeftBtn}
-            className="absolute -left-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
+            className="absolute -left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all cursor-pointer"
             aria-label="Previous Brands"
           >
             ‹
@@ -135,7 +135,7 @@ export default function ExclusiveBrandsSection() {
           {/* Scrolling Ticker Track (Desktop Only) */}
           <div
             ref={desktopScrollRef}
-            className="flex items-center gap-5 overflow-x-auto py-3 px-1 w-full no-scrollbar select-none"
+            className="flex items-center gap-5 overflow-x-auto py-3 px-3 w-full no-scrollbar select-none scroll-smooth"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {[...desktopBrands, ...desktopBrands, ...desktopBrands].map((brand, idx) => (
@@ -156,10 +156,10 @@ export default function ExclusiveBrandsSection() {
             ))}
           </div>
 
-          {/* Right Arrow Button (Desktop Only) */}
+          {/* Right Arrow Button (Desktop Only - Vertically Centered) */}
           <button
             onClick={scrollRightBtn}
-            className="absolute -right-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
+            className="absolute -right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all cursor-pointer"
             aria-label="Next Brands"
           >
             ›
