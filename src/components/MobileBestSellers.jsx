@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import SectionHeader from './SectionHeader';
 
 const bestSellers = [
@@ -21,11 +21,95 @@ const bestSellers = [
     discountNote: "on Making Value",
     badge: "Express Delivery",
     img: "/images/diamond_halo_ring.png"
+  },
+  {
+    id: 3,
+    name: "Royal Solitaire Halo Ring",
+    price: "₹84,500",
+    oldPrice: "₹95,000",
+    discount: "35% Off",
+    discountNote: "on Making Value",
+    badge: "Express Delivery",
+    img: "/images/ring_hero.jpg"
+  },
+  {
+    id: 4,
+    name: "Tennis Diamond Choker",
+    price: "₹1,65,400",
+    oldPrice: "₹1,78,000",
+    discount: "30% Off",
+    discountNote: "on Making Value",
+    badge: "Express Delivery",
+    img: "/images/tennis_diamond_necklace.png"
+  },
+  {
+    id: 5,
+    name: "Pavé Gold Cuff Bracelet",
+    price: "₹1,12,000",
+    oldPrice: "₹1,25,000",
+    discount: "25% Off",
+    discountNote: "on Making Value",
+    badge: "Express Delivery",
+    img: "/images/pave_gold_bracelet.png"
+  },
+  {
+    id: 6,
+    name: "Emerald Diamond Drop Earrings",
+    price: "₹92,300",
+    oldPrice: "₹1,05,000",
+    discount: "40% Off",
+    discountNote: "on Making Value",
+    badge: "Express Delivery",
+    img: "/images/Diamond_drop_earrings_displayed_202608261740.jpeg"
   }
 ];
 
 export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
   const [activeDot, setActiveDot] = useState(0);
+  const scrollRef = useRef(null);
+
+  // Auto-scroll products horizontally from Right to Left every 5 seconds
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const intervalId = setInterval(() => {
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      const scrollStep = container.clientWidth; // scroll one screen pair at a time
+
+      if (container.scrollLeft >= maxScroll - 15) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollStep, behavior: 'smooth' });
+      }
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // Update active dot index based on scroll position
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    if (maxScroll <= 0) return;
+
+    const progress = container.scrollLeft / maxScroll;
+    const dotIndex = Math.min(
+      Math.round(progress * 4),
+      4
+    );
+    setActiveDot(dotIndex);
+  };
+
+  const scrollToPage = (pageIndex) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    const targetLeft = (pageIndex / 4) * maxScroll;
+    container.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    setActiveDot(pageIndex);
+  };
 
   return (
     <section className="block md:hidden py-4 bg-white" id="best-sellers">
@@ -36,10 +120,18 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
           subtitle="Love the most to bought the most"
         />
 
-        {/* 2-Column Product Grid (Matching Reference Screenshot 1:1) */}
-        <div className="grid grid-cols-2 gap-3 mt-3">
+        {/* Horizontal Touch-Scrollable Product Row (2 cards visible, finger swipe + 5s auto-shift) */}
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth w-full py-1.5 mt-3 select-none snap-x snap-mandatory"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {bestSellers.map((item) => (
-            <div key={item.id} className="group flex flex-col bg-white">
+            <div
+              key={item.id}
+              className="group shrink-0 w-[calc(50%-6px)] flex flex-col bg-white snap-start"
+            >
               {/* Product Image Box */}
               <div className="relative w-full h-[175px] sm:h-[210px] bg-[#F5F5F5] rounded-2xl p-2.5 flex items-center justify-center overflow-hidden border border-[#F0E6DD]">
                 {/* Express Delivery Ribbon Badge (Top Left) */}
@@ -99,12 +191,12 @@ export default function MobileBestSellers({ onAddToCart, onToggleWishlist }) {
           ))}
         </div>
 
-        {/* Pagination Dots */}
+        {/* Pagination Dots (Syncs with scroll) */}
         <div className="flex justify-center items-center gap-1.5 my-3.5">
           {[0, 1, 2, 3, 4].map((idx) => (
             <span
               key={idx}
-              onClick={() => setActiveDot(idx)}
+              onClick={() => scrollToPage(idx)}
               className={`rounded-full transition-all duration-300 cursor-pointer ${
                 idx === activeDot
                   ? 'w-2 h-2 bg-[#9E8171]'
