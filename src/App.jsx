@@ -10,6 +10,7 @@ import ExploreJewellery from './components/ExploreJewellery';
 import CustomizeStoreSection from './components/CustomizeStoreSection';
 import GiftingAndMoreSection from './components/GiftingAndMoreSection';
 import ShopByGenderSection from './components/ShopByGenderSection';
+import QualityServiceSection from './components/QualityServiceSection';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
 
@@ -49,6 +50,7 @@ export default function App() {
         <CustomizeStoreSection />
         <GiftingAndMoreSection />
         <ShopByGenderSection />
+        <QualityServiceSection />
         <FeaturedProducts
           onAddToCart={handleAddToCart}
           onToggleWishlist={handleToggleWishlist}
