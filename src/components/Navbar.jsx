@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Navbar() {
   return (
-    <nav className="main-navbar">
+    <nav className="main-navbar hidden md:block">
       <div className="container nav-container">
         <ul className="nav-links">
           <li className="nav-link-item"><a href="#new-arrivals">New Arrivals</a></li>
