@@ -8,35 +8,45 @@ const brandBanners = [
     subtitle: "DIAMOND COLLECTION",
     img: "/images/Woman_wearing_diamond_earrings_202608261739.jpeg",
     badge: "PRIDE",
-    badgeSub: "diamond collection"
+    badgeSub: "diamond collection",
+    textColor: "text-[#0A2E5C]",
+    fontStyle: "font-serif font-bold text-xl tracking-[0.18em]"
   },
   {
     id: 2,
     name: "ratna",
     displayName: "r · a · t · n · a",
     subtitle: "PRECIOUS STONE JEWELLERY",
-    img: "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg"
+    img: "/images/Woman_wearing_ornate_diamond_Nath_202608261801.jpeg",
+    textColor: "text-[#4A0E17]",
+    fontStyle: "font-serif text-base font-medium tracking-[0.22em]"
   },
   {
     id: 3,
     name: "apurva",
     displayName: "APURVA",
     subtitle: "ANTIQUE COLLECTION",
-    img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg"
+    img: "/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg",
+    textColor: "text-[#3A1F13]",
+    fontStyle: "font-serif font-bold text-base tracking-widest"
   },
   {
     id: 4,
     name: "veda",
     displayName: "VEDA",
     subtitle: "TRADITIONAL JEWELLERY",
-    img: "/images/necklace_hero.jpg"
+    img: "/images/necklace_hero.jpg",
+    textColor: "text-[#1A1A1A]",
+    fontStyle: "font-serif italic text-lg font-bold"
   },
   {
     id: 5,
     name: "eleganza",
     displayName: "ELEGANZA",
     subtitle: "POLKI DIAMOND COLLECTION",
-    img: "/images/tennis_diamond_necklace.png"
+    img: "/images/tennis_diamond_necklace.png",
+    textColor: "text-[#222222]",
+    fontStyle: "font-serif font-light text-base tracking-[0.18em]"
   }
 ];
 
@@ -101,13 +111,13 @@ export default function ExclusiveBrandsSection() {
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             />
 
-            {/* Brand Logo Badge (Top Right) */}
-            <div className="absolute top-3 right-4 z-10 text-right">
-              <div className="font-serif font-bold text-xl tracking-[0.18em] text-[#0A2E5C] flex items-center gap-1 justify-end">
+            {/* Brand Logo Badge (Top Right Overlay) */}
+            <div className="absolute top-3 right-3 z-10 text-right bg-white/90 backdrop-blur-xs px-3 py-1.5 rounded-lg border border-[#F0DEC9] shadow-sm">
+              <div className="font-serif font-bold text-lg tracking-[0.18em] text-[#0A2E5C] flex items-center gap-1 justify-end leading-none">
                 <span>PRIDE</span>
                 <span className="text-xs text-[#00A3E0]">💎</span>
               </div>
-              <span className="block font-sans text-[0.55rem] tracking-widest text-[#0A2E5C] uppercase font-semibold">
+              <span className="block font-sans text-[0.52rem] tracking-widest text-[#0A2E5C] uppercase font-bold mt-0.5">
                 diamond collection
               </span>
             </div>
@@ -130,12 +140,12 @@ export default function ExclusiveBrandsSection() {
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
 
-                {/* Brand Overlay Title (Top Right) */}
-                <div className="absolute top-2.5 right-3 z-10 text-right bg-black/20 backdrop-blur-2xs px-2 py-0.5 rounded">
-                  <span className="font-serif text-sm font-semibold tracking-wider text-white drop-shadow-xs block leading-tight">
+                {/* Brand Overlay Title Badge (Top Right Overlay) */}
+                <div className="absolute top-2.5 right-2.5 z-10 text-right bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-[#F0DEC9] shadow-xs">
+                  <span className={`${brand.fontStyle} ${brand.textColor} block leading-tight`}>
                     {brand.displayName || brand.name}
                   </span>
-                  <span className="font-sans text-[0.5rem] tracking-widest text-white/90 uppercase font-medium block">
+                  <span className="font-sans text-[0.48rem] tracking-widest text-[#666666] uppercase font-semibold block mt-0.5">
                     {brand.subtitle}
                   </span>
                 </div>
