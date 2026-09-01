@@ -7,7 +7,6 @@ import TrustFeatures from './components/TrustFeatures';
 import ShopByCategory from './components/ShopByCategory';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
-import './App.css';
 
 export default function App() {
   const [wishlistCount, setWishlistCount] = useState(3);
@@ -32,7 +31,7 @@ export default function App() {
   };
 
   return (
-    <div className="app-root">
+    <div className="min-h-screen bg-white text-text-dark font-sans">
       <TopAnnouncementBar />
       <Header wishlistCount={wishlistCount} cartCount={cartCount} />
       <Navbar />
