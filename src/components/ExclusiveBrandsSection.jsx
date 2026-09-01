@@ -69,7 +69,7 @@ export default function ExclusiveBrandsSection() {
     const container = scrollRef.current;
     if (!container) return;
 
-    const cardWidth = 235; // 215px width + 20px gap
+    const cardWidth = 235;
 
     const intervalId = setInterval(() => {
       if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 20) {
@@ -96,7 +96,7 @@ export default function ExclusiveBrandsSection() {
 
   return (
     <section className="py-14 bg-white overflow-hidden" id="brands">
-      <div className="max-w-[1340px] mx-auto px-5">
+      <div className="max-w-[1340px] mx-auto px-4">
         {/* Section Header */}
         <SectionHeader
           title="OUR EXCLUSIVE BRANDS"
@@ -104,11 +104,11 @@ export default function ExclusiveBrandsSection() {
         />
 
         {/* Brand Carousel Slider */}
-        <div className="relative flex items-center px-4">
-          {/* Left Arrow Button */}
+        <div className="relative flex items-center">
+          {/* Left Arrow Button (Desktop Only) */}
           <button
             onClick={scrollLeftBtn}
-            className="absolute -left-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
+            className="hidden md:flex absolute -left-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
             aria-label="Previous Brands"
           >
             ‹
@@ -117,7 +117,7 @@ export default function ExclusiveBrandsSection() {
           {/* Scrolling Ticker Track */}
           <div
             ref={scrollRef}
-            className="flex items-center gap-5 overflow-x-auto py-3 px-2 w-full no-scrollbar select-none"
+            className="flex items-center gap-5 overflow-x-auto py-3 px-1 w-full no-scrollbar select-none"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {[...brands, ...brands, ...brands].map((brand, idx) => (
@@ -138,10 +138,10 @@ export default function ExclusiveBrandsSection() {
             ))}
           </div>
 
-          {/* Right Arrow Button */}
+          {/* Right Arrow Button (Desktop Only) */}
           <button
             onClick={scrollRightBtn}
-            className="absolute -right-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
+            className="hidden md:flex absolute -right-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
             aria-label="Next Brands"
           >
             ›
