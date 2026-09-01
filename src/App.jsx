@@ -73,9 +73,17 @@ export default function App() {
           <ShopByGenderSection />
         </div>
 
-        <DiamondJewellery />
+        {/* Web/Desktop View Only: Diamond Jewellery Section */}
+        <div className="hidden md:block">
+          <DiamondJewellery />
+        </div>
+
         <CollectionsSection />
-        <ExploreJewellery />
+
+        {/* Web/Desktop View Only: Explore Jewellery Section */}
+        <div className="hidden md:block">
+          <ExploreJewellery />
+        </div>
 
         {/* Web/Desktop View Only: Customize Store Section in original Desktop position */}
         <div className="hidden md:block">
