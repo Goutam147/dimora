@@ -1140,6 +1140,20 @@ button {
     transition: all 0.3s ease;
 }
 
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-dark);
+    background-color: #FFFFFF;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
     .hero-banner-section { height: 420px; }
@@ -1157,22 +1171,52 @@ button {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100vw;
+    }
+    
+    /* Hide overflowing side carousel arrows on mobile */
+    .carousel-arrow, .prev-coll-arrow, .next-coll-arrow {
+        display: none !important;
+    }
+
     .hero-banner-section { height: 320px; }
-    .header-utilities, .country-pill, .gold-scheme-badge { display: none; }
-    .header-search { display: none; }
-    .main-navbar { display: none; }
-    .categories-3col-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .cat-rect-img-box { height: 160px; }
+    .categories-3col-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px; }
+    .cat-rect-img-box { height: 145px; }
     .products-grid { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; }
-    .collections-cards-grid { grid-template-columns: repeat(2, 1fr); }
-    .collection-img-box { height: 300px; }
+
+    /* Keep Collections horizontal slider smooth on mobile */
+    .collections-cards-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        gap: 16px !important;
+        padding-bottom: 8px !important;
+        scroll-snap-type: x mandatory;
+    }
+
+    .collection-card {
+        flex: 0 0 78% !important;
+        min-width: 250px !important;
+        scroll-snap-align: start;
+    }
+
+    .collection-img-box {
+        height: 310px !important;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-banner-section { height: 240px; }
-    .categories-3col-grid { grid-template-columns: 1fr; }
-    .cat-rect-img-box { height: 190px; }
-    .collections-cards-grid { grid-template-columns: 1fr; }
-    .collection-img-box { height: 280px; }
+    .categories-3col-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px; }
+    .cat-rect-img-box { height: 135px; }
+    
+    .collection-card {
+        flex: 0 0 85% !important;
+        min-width: 240px !important;
+    }
+    .collection-img-box {
+        height: 290px !important;
+    }
 }
