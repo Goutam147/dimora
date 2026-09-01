@@ -41,9 +41,16 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-text-dark font-sans">
+      {/* Top Announcement Bar */}
       <TopAnnouncementBar />
-      <Header wishlistCount={wishlistCount} cartCount={cartCount} />
-      <Navbar />
+
+      {/* Sticky Header & Navbar Container */}
+      <div className="sticky top-0 z-50 bg-white shadow-md transition-shadow">
+        <Header wishlistCount={wishlistCount} cartCount={cartCount} />
+        <Navbar />
+      </div>
+
+      {/* Main Content */}
       <main>
         <HeroSlider />
         <ShopByCategory />
@@ -62,6 +69,7 @@ export default function App() {
           onToggleWishlist={handleToggleWishlist}
         />
       </main>
+
       <Footer />
 
       {toastMessage && (
