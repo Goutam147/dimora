@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import TopAnnouncementBar from './components/TopAnnouncementBar';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import MobileCategoriesStrip from './components/MobileCategoriesStrip';
+import MobileBottomNav from './components/MobileBottomNav';
 import HeroSlider from './components/HeroSlider';
 import ShopByCategory from './components/ShopByCategory';
 import DiamondJewellery from './components/DiamondJewellery';
@@ -40,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-text-dark font-sans">
+    <div className="min-h-screen bg-white text-text-dark font-sans pb-14 md:pb-0">
       {/* Top Announcement Bar */}
       <TopAnnouncementBar />
 
@@ -49,6 +51,9 @@ export default function App() {
         <Header wishlistCount={wishlistCount} cartCount={cartCount} />
         <Navbar />
       </div>
+
+      {/* Horizontal Circular Categories Strip (Visible on Mobile) */}
+      <MobileCategoriesStrip />
 
       {/* Main Content */}
       <main>
@@ -71,6 +76,9 @@ export default function App() {
       </main>
 
       <Footer />
+
+      {/* Fixed Mobile Bottom Navigation Bar (Account, Categories, Gold Scheme, Help) */}
+      <MobileBottomNav />
 
       {toastMessage && (
         <div className="toast-notification">
