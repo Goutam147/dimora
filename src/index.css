@@ -1197,6 +1197,10 @@ body {
         width: 100vw;
     }
     
+    .header-utilities {
+        display: none !important;
+    }
+
     .main-navbar {
         display: none !important;
     }
