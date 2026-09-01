@@ -31,15 +31,18 @@ export default function ExploreJewellery() {
         {/* 3-Column Grid Layout */}
         <div className="explore-grid-layout">
           {/* Left Column Card (Tall Portrait) */}
-          <a href="#emerald-collection" className="explore-card tall-card">
-            <div className="explore-img-box">
-              <img
-                src="/images/necklace_hero.jpg"
-                alt="Exquisite Emerald & Diamond Jewellery"
-                className="explore-img"
-              />
-            </div>
-          </a>
+          <div className="explore-column">
+            <a href="#diamond-jewellery" className="explore-card tall-card">
+              <div className="explore-img-box">
+                <img
+                  src="/images/necklace_hero.jpg"
+                  alt="Exquisite Diamond Jewellery"
+                  className="explore-img"
+                />
+              </div>
+            </a>
+            <span className="explore-card-label">Diamond Jewellery</span>
+          </div>
 
           {/* Middle Column (2 Stacked Landscape Cards) */}
           <div className="explore-middle-col">
@@ -54,37 +57,41 @@ export default function ExploreJewellery() {
               <span className="explore-card-label">Gold Jewellery</span>
             </a>
 
-            <a href="#beaded-jewellery" className="explore-card stack-card">
+            <a href="#gemstone-jewellery" className="explore-card stack-card">
               <div className="explore-img-box">
                 <img
                   src="/images/Diamond_Jhumka_earrings_close-up_202608261740.jpeg"
-                  alt="Traditional Heritage Jewellery"
+                  alt="Gemstone Jewellery"
                   className="explore-img"
                 />
               </div>
+              <span className="explore-card-label">Gemstone Jewellery</span>
             </a>
           </div>
 
-          {/* Right Column Card (Tall Portrait - Men of Platinum) */}
-          <a href="#men-of-platinum" className="explore-card tall-card dark-platinum-theme">
-            <div className="explore-img-box">
-              <img
-                src="/images/ring_hero.jpg"
-                alt="Men of Platinum Collection"
-                className="explore-img"
-              />
-              <div className="platinum-brand-watermark">
-                <span className="plat-symbol">Pt</span>
-                <small className="plat-text">MEN OF PLATINUM</small>
+          {/* Right Column Card (Tall Portrait - Platinum) */}
+          <div className="explore-column">
+            <a href="#platinum-jewellery" className="explore-card tall-card dark-platinum-theme">
+              <div className="explore-img-box">
+                <img
+                  src="/images/ring_hero.jpg"
+                  alt="Platinum Jewellery Collection"
+                  className="explore-img"
+                />
+                <div className="platinum-brand-watermark">
+                  <span className="plat-symbol">Pt</span>
+                  <small className="plat-text">MEN OF PLATINUM</small>
+                </div>
               </div>
-            </div>
-          </a>
+            </a>
+            <span className="explore-card-label">Platinum Jewellery</span>
+          </div>
         </div>
 
-        {/* View All Button */}
-        <div className="explore-more-wrap">
+        {/* Discover More Button */}
+        <div className="explore-more-wrap compact-explore-wrap">
           <a href="#explore-all-jewellery" className="explore-more-btn">
-            View All Jewellery
+            Discover More
           </a>
         </div>
       </div>
