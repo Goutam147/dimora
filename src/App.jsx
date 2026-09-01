@@ -59,23 +59,29 @@ export default function App() {
         <HeroSlider />
         <ShopByCategory />
 
-        {/* Mobile View Only Sections (Exclusive Brands + Shop By Price) */}
+        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store) */}
         <div className="block md:hidden">
           <ExclusiveBrandsSection />
           <MobileShopByPrice />
+          <CustomizeStoreSection />
         </div>
 
         <DiamondJewellery />
         <CollectionsSection />
         <ExploreJewellery />
-        <CustomizeStoreSection />
+
+        {/* Web/Desktop View Only: Customize Store Section in original Desktop position */}
+        <div className="hidden md:block">
+          <CustomizeStoreSection />
+        </div>
+
         <GiftingAndMoreSection />
         <ShopByGenderSection />
         <QualityServiceSection />
         <InstagramSection />
         <TakeATourSection />
 
-        {/* Web/Desktop View Only: Exclusive Brands Section in its original bottom position */}
+        {/* Web/Desktop View Only: Exclusive Brands Section in original Desktop position */}
         <div className="hidden md:block">
           <ExclusiveBrandsSection />
         </div>
