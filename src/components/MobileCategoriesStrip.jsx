@@ -5,7 +5,7 @@ const mobileCategories = [
     id: 1,
     title: "Express Delivery",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B30018" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B30018" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="3" width="15" height="13" rx="2" />
         <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
         <circle cx="5.5" cy="18.5" r="2.5" />
@@ -48,20 +48,20 @@ const mobileCategories = [
 
 export default function MobileCategoriesStrip() {
   return (
-    <div className="bg-[#FAF3EB] border-b border-[#F0DEC9] py-2.5 px-2 md:hidden">
-      {/* 6 Column Flex Row fitting all 6 items cleanly on mobile screens */}
+    <div className="bg-[#FAF3EB] border-b border-[#F0DEC9] py-2.5 px-3 md:hidden">
+      {/* Touch-Scrollable Row with Hidden Invisible Scrollbar */}
       <div
-        className="grid grid-cols-6 gap-1 items-start text-center overflow-hidden"
+        className="flex items-start gap-4 overflow-x-auto no-scrollbar scroll-smooth w-full"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {mobileCategories.map((item) => (
           <a
             key={item.id}
             href={item.link}
-            className="flex flex-col items-center justify-start text-center group w-full"
+            className="flex flex-col items-center justify-start text-center shrink-0 w-[64px] group"
           >
             {/* Circular Image / Icon Ring Box */}
-            <div className="w-[46px] h-[46px] sm:w-[52px] sm:h-[52px] rounded-full border-[1.5px] border-[#E79F67] bg-white p-0.5 shadow-2xs group-hover:scale-105 transition-transform overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-[52px] h-[52px] rounded-full border-[1.5px] border-[#E79F67] bg-white p-0.5 shadow-2xs group-hover:scale-105 transition-transform overflow-hidden flex items-center justify-center shrink-0">
               {item.img ? (
                 <img
                   src={item.img}
@@ -75,7 +75,7 @@ export default function MobileCategoriesStrip() {
               )}
             </div>
             {/* Title */}
-            <span className="font-sans text-[0.6rem] text-[#333333] font-medium leading-[1.15] mt-1 line-clamp-2 w-full px-0.5">
+            <span className="font-sans text-[0.65rem] text-[#333333] font-medium leading-[1.15] mt-1.5 line-clamp-2 w-full">
               {item.title}
             </span>
           </a>
