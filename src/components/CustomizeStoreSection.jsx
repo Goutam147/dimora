@@ -91,7 +91,7 @@ export default function CustomizeStoreSection() {
             <a href="#expert-advice" className="group block text-center">
               <div className="w-full h-[95px] sm:h-[125px] rounded-xl overflow-hidden shadow-xs border border-[#F2E6D8] bg-[#FAF6F0]">
                 <img
-                  src="/images/Diamond_drop_earrings_macro_close-up_202608261740.jpeg"
+                  src="/images/Diamond_drop_earrings_displayed_202608261740.jpeg"
                   alt="Expert Advice Jewellery Inspection"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
