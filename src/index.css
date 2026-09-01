@@ -761,6 +761,32 @@ button {
     transform: scale(1.08);
 }
 
+/* Explore More Button */
+.explore-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+}
+
+.explore-more-btn {
+    display: inline-block;
+    border: 1.5px solid #B30018;
+    color: #B30018;
+    background: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 10px 38px;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.explore-more-btn:hover {
+    background: #B30018;
+    color: #FFFFFF;
+}
+
 /* 7. FEATURED PRODUCTS */
 .featured-products-section {
     padding: 45px 0;

@@ -80,6 +80,13 @@ export default function DiamondJewellery() {
             </div>
           </div>
         </div>
+
+        {/* Explore More Button */}
+        <div className="explore-more-wrap">
+          <a href="#explore-diamond" className="explore-more-btn">
+            Explore More
+          </a>
+        </div>
       </div>
     </section>
   );
