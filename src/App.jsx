@@ -6,6 +6,7 @@ import MobileCategoriesStrip from './components/MobileCategoriesStrip';
 import MobileBottomNav from './components/MobileBottomNav';
 import HeroSlider from './components/HeroSlider';
 import ShopByCategory from './components/ShopByCategory';
+import ExclusiveBrandsSection from './components/ExclusiveBrandsSection';
 import DiamondJewellery from './components/DiamondJewellery';
 import CollectionsSection from './components/CollectionsSection';
 import ExploreJewellery from './components/ExploreJewellery';
@@ -15,7 +16,6 @@ import ShopByGenderSection from './components/ShopByGenderSection';
 import QualityServiceSection from './components/QualityServiceSection';
 import InstagramSection from './components/InstagramSection';
 import TakeATourSection from './components/TakeATourSection';
-import ExclusiveBrandsSection from './components/ExclusiveBrandsSection';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
 
@@ -57,6 +57,7 @@ export default function App() {
       <main>
         <HeroSlider />
         <ShopByCategory />
+        <ExclusiveBrandsSection />
         <DiamondJewellery />
         <CollectionsSection />
         <ExploreJewellery />
@@ -66,7 +67,6 @@ export default function App() {
         <QualityServiceSection />
         <InstagramSection />
         <TakeATourSection />
-        <ExclusiveBrandsSection />
         <FeaturedProducts
           onAddToCart={handleAddToCart}
           onToggleWishlist={handleToggleWishlist}
