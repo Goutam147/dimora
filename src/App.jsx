@@ -61,7 +61,7 @@ export default function App() {
         <HeroSlider />
         <ShopByCategory />
 
-        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store -> Our Best Sellers -> Joy Of Gifting) */}
+        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store -> Our Best Sellers -> Joy Of Gifting -> Shop By Gender) */}
         <div className="block md:hidden">
           <ExclusiveBrandsSection />
           <MobileShopByPrice />
@@ -71,6 +71,7 @@ export default function App() {
             onToggleWishlist={handleToggleWishlist}
           />
           <MobileJoyOfGifting />
+          <ShopByGenderSection />
         </div>
 
         <DiamondJewellery />
@@ -87,7 +88,11 @@ export default function App() {
           <GiftingAndMoreSection />
         </div>
 
-        <ShopByGenderSection />
+        {/* Web/Desktop View Only: Shop By Gender Section in original Desktop position */}
+        <div className="hidden md:block">
+          <ShopByGenderSection />
+        </div>
+
         <QualityServiceSection />
         <InstagramSection />
         <TakeATourSection />
