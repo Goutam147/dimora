@@ -100,9 +100,9 @@ export default function InstagramSection() {
         {/* Need Help Choosing Jewellery Section with 2 Overlapping Cards */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 max-w-[1240px] mx-auto pt-4">
           {/* Left: 2 Overlapping Image Cards */}
-          <div className="relative w-full sm:w-[500px] h-[370px] flex items-center justify-start pl-2">
+          <div className="relative w-full sm:w-[540px] h-[370px] flex items-center justify-start pl-2">
             {/* Base Card 1 (Model Image) */}
-            <div className="w-[290px] h-[360px] rounded-2xl overflow-hidden shadow-md border border-black/5 bg-[#F5EFE6] relative z-0">
+            <div className="w-[280px] h-[360px] rounded-2xl overflow-hidden shadow-md border border-black/5 bg-[#F5EFE6] relative z-0">
               <img
                 src="/images/Woman_wearing_diamond_earrings_202608261740.jpeg"
                 alt="Model Wearing Jewellery"
@@ -111,7 +111,7 @@ export default function InstagramSection() {
             </div>
 
             {/* Overlapping Card 2 (Product Photography on Pedestal) */}
-            <div className="absolute left-[200px] top-[30px] w-[260px] h-[300px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-[#4A121A] z-10 transition-transform duration-300 hover:scale-[1.02]">
+            <div className="absolute left-[245px] top-[30px] w-[250px] h-[300px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-[#4A121A] z-10 transition-transform duration-300 hover:scale-[1.02]">
               <img
                 src="/images/necklace_hero.jpg"
                 alt="Ruby & Diamond Necklace Set"
