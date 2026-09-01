@@ -48,17 +48,6 @@ const trustFeatures = [
         <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.8-5.9-2.2L2 14" />
       </svg>
     )
-  },
-  {
-    id: 5,
-    title: "14 Days Return",
-    subtext: "14 Days Hassle-Free Returns",
-    icon: (
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C5283C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-        <path d="M3 3v5h5" />
-      </svg>
-    )
   }
 ];
 
@@ -83,10 +72,10 @@ export default function QualityServiceSection() {
             </p>
           </div>
 
-          {/* Row 2: 2x2 Grid + Centered 5th Service Feature */}
+          {/* Row 2: Clean 2x2 Service Grid */}
           <div className="bg-[#FFFBF5] border-t border-b border-[#F2E6D8]">
             <div className="grid grid-cols-2 divide-x divide-y divide-[#F2E6D8]">
-              {trustFeatures.slice(0, 4).map((item) => (
+              {trustFeatures.map((item) => (
                 <div key={item.id} className="p-4 flex flex-col items-center text-center">
                   <div className="mb-2">
                     {item.icon}
@@ -99,19 +88,6 @@ export default function QualityServiceSection() {
                   </p>
                 </div>
               ))}
-            </div>
-
-            {/* 5th Centered Feature: 14 Days Return */}
-            <div className="p-4 border-t border-[#F2E6D8] flex flex-col items-center text-center">
-              <div className="mb-2">
-                {trustFeatures[4].icon}
-              </div>
-              <h4 className="font-serif text-sm font-semibold text-[#111111] leading-tight">
-                {trustFeatures[4].title}
-              </h4>
-              <p className="font-sans text-[0.65rem] text-[#666666] font-normal mt-1 leading-tight">
-                {trustFeatures[4].subtext}
-              </p>
             </div>
           </div>
         </div>
@@ -137,9 +113,9 @@ export default function QualityServiceSection() {
             </div>
           </div>
 
-          {/* 5 Trust Features Strip */}
+          {/* 4 Trust Features Strip */}
           <div className="bg-[#FAF6F0] rounded-2xl py-8 px-4 border border-[#EFE8DE] shadow-sm">
-            <div className="grid grid-cols-5 gap-6 divide-x divide-[#E2D8CC]">
+            <div className="grid grid-cols-4 gap-6 divide-x divide-[#E2D8CC]">
               {trustFeatures.map((item) => (
                 <div key={item.id} className="flex flex-col items-center text-center px-3">
                   <div className="mb-3 text-[#B30018]">
