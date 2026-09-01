@@ -728,7 +728,7 @@ button {
 
 .diamond-top-banner {
     position: relative;
-    height: 330px;
+    height: 320px;
     border-radius: 16px;
     overflow: hidden;
     background: #8F3B25;
@@ -739,17 +739,25 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    height: 166px;
 }
 
-.small-diamond-card {
-    height: 100%;
+.small-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.small-card-img-box {
+    width: 100%;
+    height: 145px;
     border-radius: 12px;
     overflow: hidden;
     background: #F8F6F0;
 }
 
-.small-diamond-card img {
+.small-card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -757,15 +765,27 @@ button {
     transition: transform 0.4s ease;
 }
 
-.small-diamond-card:hover img {
-    transform: scale(1.08);
+.small-product-card:hover .small-card-img {
+    transform: scale(1.06);
+}
+
+.small-card-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #111111;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 1.2;
 }
 
 /* Explore More Button */
 .explore-more-wrap {
     display: flex;
     justify-content: center;
-    margin-top: 36px;
+    margin-top: 40px;
+    clear: both;
+    width: 100%;
 }
 
 .explore-more-btn {
@@ -806,13 +826,23 @@ button {
 }
 
 .collections-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     width: 100%;
+    padding: 8px 4px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.collections-cards-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .collection-card {
+    flex: 0 0 calc(33.333% - 16px);
+    min-width: 320px;
     display: block;
     text-decoration: none;
     cursor: pointer;
@@ -823,7 +853,7 @@ button {
 .collection-img-box {
     position: relative;
     width: 100%;
-    height: 410px;
+    height: 380px;
     border-radius: 16px;
     overflow: hidden;
     background: #F4F0EA;
@@ -840,6 +870,26 @@ button {
 
 .collection-card:hover .collection-img {
     transform: scale(1.05);
+}
+
+.collection-info {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.collection-title {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.2;
+}
+
+.collection-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #666666;
+    margin-top: 2px;
 }
 
 .collection-branding-watermark {
@@ -880,16 +930,16 @@ button {
     height: 44px;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     color: #222222;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: all 0.25s ease;
-    z-index: 20;
+    z-index: 30;
 }
 
 .carousel-arrow:hover {
