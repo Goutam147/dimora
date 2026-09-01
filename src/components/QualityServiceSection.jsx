@@ -89,14 +89,6 @@ export default function QualityServiceSection() {
           </div>
         </div>
 
-        {/* Full-width Crimson Brand Banner */}
-        <div className="w-full bg-[#B30018] py-6 px-4 rounded-xl text-center text-white mb-10 shadow-sm flex flex-col items-center justify-center">
-          <img src="/diamora_logo.png" alt="Dimora Logo" className="h-10 brightness-0 invert mb-1" />
-          <span className="font-serif text-sm font-semibold tracking-widest uppercase">
-            World's favourite jeweller
-          </span>
-        </div>
-
         {/* 5 Trust Features Strip */}
         <div className="bg-[#FAF6F0] rounded-2xl py-8 px-4 border border-[#EFE8DE] shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 divide-y md:divide-y-0 md:divide-x divide-[#E2D8CC]">
