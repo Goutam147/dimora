@@ -46,14 +46,12 @@ export default function App() {
       {/* Top Announcement Bar */}
       <TopAnnouncementBar />
 
-      {/* Sticky Header & Navbar Container */}
+      {/* Sticky Header, Navbar & Mobile Categories Container */}
       <div className="sticky top-0 z-50 bg-white shadow-md transition-shadow">
         <Header wishlistCount={wishlistCount} cartCount={cartCount} />
         <Navbar />
+        <MobileCategoriesStrip />
       </div>
-
-      {/* Horizontal Circular Categories Strip (Visible on Mobile) */}
-      <MobileCategoriesStrip />
 
       {/* Main Content */}
       <main>
@@ -77,7 +75,7 @@ export default function App() {
 
       <Footer />
 
-      {/* Fixed Mobile Bottom Navigation Bar (Account, Categories, Gold Scheme, Help) */}
+      {/* Fixed Mobile Bottom Navigation Bar */}
       <MobileBottomNav />
 
       {toastMessage && (
