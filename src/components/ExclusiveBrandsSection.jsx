@@ -63,18 +63,20 @@ const brands = [
 export default function ExclusiveBrandsSection() {
   const scrollRef = useRef(null);
 
-  // Auto-scroll loop right-to-left continuously
+  // Auto-scroll loop: shift one card at a time every 2 seconds
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
 
-    let intervalId = setInterval(() => {
-      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 10) {
-        container.scrollLeft = 0;
+    const cardWidth = 235; // 215px width + 20px gap
+
+    const intervalId = setInterval(() => {
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 20) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        container.scrollBy({ left: 1.5, behavior: 'smooth' });
+        container.scrollBy({ left: cardWidth, behavior: 'smooth' });
       }
-    }, 30);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
