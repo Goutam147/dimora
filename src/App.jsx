@@ -8,10 +8,11 @@ import HeroSlider from './components/HeroSlider';
 import ShopByCategory from './components/ShopByCategory';
 import ExclusiveBrandsSection from './components/ExclusiveBrandsSection';
 import MobileShopByPrice from './components/MobileShopByPrice';
+import CustomizeStoreSection from './components/CustomizeStoreSection';
+import MobileBestSellers from './components/MobileBestSellers';
 import DiamondJewellery from './components/DiamondJewellery';
 import CollectionsSection from './components/CollectionsSection';
 import ExploreJewellery from './components/ExploreJewellery';
-import CustomizeStoreSection from './components/CustomizeStoreSection';
 import GiftingAndMoreSection from './components/GiftingAndMoreSection';
 import ShopByGenderSection from './components/ShopByGenderSection';
 import QualityServiceSection from './components/QualityServiceSection';
@@ -59,11 +60,15 @@ export default function App() {
         <HeroSlider />
         <ShopByCategory />
 
-        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store) */}
+        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store -> Our Best Sellers) */}
         <div className="block md:hidden">
           <ExclusiveBrandsSection />
           <MobileShopByPrice />
           <CustomizeStoreSection />
+          <MobileBestSellers
+            onAddToCart={handleAddToCart}
+            onToggleWishlist={handleToggleWishlist}
+          />
         </div>
 
         <DiamondJewellery />
