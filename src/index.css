@@ -1209,6 +1209,36 @@ body {
         display: none !important;
     }
 
+    /* Reduce Section Heading Text Size & Spacing on Mobile */
+    .category-heading {
+        font-size: 1.3rem !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 3px !important;
+    }
+
+    .category-subheading {
+        font-size: 0.82rem !important;
+    }
+
+    .section-title-wrap {
+        margin-bottom: 18px !important;
+    }
+
+    .ornament-line {
+        width: 35px !important;
+    }
+
+    /* Reduce vertical padding between sections on Mobile */
+    section {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
+    .category-grid-section, .featured-products-section {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+    }
+
     /* Hide overflowing side carousel arrows on mobile */
     .carousel-arrow, .prev-coll-arrow, .next-coll-arrow {
         display: none !important;
