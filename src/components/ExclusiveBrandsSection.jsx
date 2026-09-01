@@ -53,7 +53,6 @@ const desktopBrands = [
 
 export default function ExclusiveBrandsSection() {
   const desktopScrollRef = useRef(null);
-  const mobileRowRef = useRef(null);
 
   // Desktop Auto-scroll loop
   useEffect(() => {
@@ -71,17 +70,29 @@ export default function ExclusiveBrandsSection() {
     return () => clearInterval(intervalId);
   }, []);
 
+  const scrollLeftBtn = () => {
+    if (desktopScrollRef.current) {
+      desktopScrollRef.current.scrollBy({ left: -260, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRightBtn = () => {
+    if (desktopScrollRef.current) {
+      desktopScrollRef.current.scrollBy({ left: 260, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-6 md:py-14 bg-white overflow-hidden" id="brands">
       <div className="max-w-[1340px] mx-auto px-3 sm:px-5">
         {/* Section Header */}
         <SectionHeader
-          title="Our Exclusive Brands"
+          title="OUR EXCLUSIVE BRANDS"
           subtitle="We live every second of our day. Why not make every moment special?"
         />
 
-        {/* MOBILE RESPONSIVE LAYOUT (Matching Reference Image 1:1) */}
-        <div className="md:hidden space-y-3 mt-4">
+        {/* MOBILE RESPONSIVE LAYOUT (Visible only on Mobile < 768px) */}
+        <div className="block md:hidden space-y-3 mt-4">
           {/* Row 1: Full-Width PRIDE Diamond Banner Card */}
           <a href="#pride-brand" className="group block relative w-full h-[210px] sm:h-[260px] rounded-2xl overflow-hidden shadow-xs border border-[#F0DEC9]">
             <img
@@ -104,7 +115,6 @@ export default function ExclusiveBrandsSection() {
 
           {/* Row 2: Touch-Scrollable Row of Brand Cards */}
           <div
-            ref={mobileRowRef}
             className="flex items-center gap-3 overflow-x-auto no-scrollbar scroll-smooth w-full py-1 select-none"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
@@ -134,8 +144,18 @@ export default function ExclusiveBrandsSection() {
           </div>
         </div>
 
-        {/* DESKTOP CAROUSEL TICKER (Visible on Desktop >= 768px) */}
+        {/* ORIGINAL UNCHANGED DESKTOP LAYOUT (Visible only on Web/Desktop >= 768px) */}
         <div className="hidden md:block relative items-center mt-6">
+          {/* Left Arrow Button (Desktop Only) */}
+          <button
+            onClick={scrollLeftBtn}
+            className="absolute -left-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
+            aria-label="Previous Brands"
+          >
+            ‹
+          </button>
+
+          {/* Scrolling Ticker Track (Desktop Only) */}
           <div
             ref={desktopScrollRef}
             className="flex items-center gap-5 overflow-x-auto py-3 px-1 w-full no-scrollbar select-none"
@@ -158,6 +178,15 @@ export default function ExclusiveBrandsSection() {
               </div>
             ))}
           </div>
+
+          {/* Right Arrow Button (Desktop Only) */}
+          <button
+            onClick={scrollRightBtn}
+            className="absolute -right-1 z-20 w-10 h-10 rounded-full bg-white border border-[#E0D0C0] text-[#333333] flex items-center justify-center text-2xl shadow-md hover:bg-[#B30018] hover:text-white hover:border-[#B30018] transition-all"
+            aria-label="Next Brands"
+          >
+            ›
+          </button>
         </div>
       </div>
     </section>

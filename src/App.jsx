@@ -57,7 +57,12 @@ export default function App() {
       <main>
         <HeroSlider />
         <ShopByCategory />
-        <ExclusiveBrandsSection />
+
+        {/* Mobile View Only: Exclusive Brands Section right after Shop By Category */}
+        <div className="block md:hidden">
+          <ExclusiveBrandsSection />
+        </div>
+
         <DiamondJewellery />
         <CollectionsSection />
         <ExploreJewellery />
@@ -67,6 +72,12 @@ export default function App() {
         <QualityServiceSection />
         <InstagramSection />
         <TakeATourSection />
+
+        {/* Web/Desktop View Only: Exclusive Brands Section in its original bottom position */}
+        <div className="hidden md:block">
+          <ExclusiveBrandsSection />
+        </div>
+
         <FeaturedProducts
           onAddToCart={handleAddToCart}
           onToggleWishlist={handleToggleWishlist}
