@@ -349,10 +349,11 @@ button {
     color: var(--brand-red);
 }
 
-/* 4. HERO BANNER IMAGE SECTION */
+/* 4. HERO BANNER IMAGE SECTION (FIXED HEIGHT) */
 .hero-banner-section {
     position: relative;
     width: 100%;
+    height: 500px;
     background: #F4F4F4;
     overflow: hidden;
 }
@@ -360,22 +361,32 @@ button {
 .hero-slider {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 .hero-slide {
     display: none;
     width: 100%;
+    height: 100%;
 }
 
 .hero-slide.active {
     display: block;
+    height: 100%;
+}
+
+.hero-slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .hero-banner-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Slider Controls */
@@ -759,6 +770,7 @@ button {
 
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 1024px) {
+    .hero-banner-section { height: 420px; }
     .header-search { max-width: 250px; }
     .nav-links { gap: 10px; font-size: 0.8rem; }
     .categories-row { grid-template-columns: repeat(3, 1fr); }
@@ -766,10 +778,15 @@ button {
 }
 
 @media (max-width: 768px) {
+    .hero-banner-section { height: 320px; }
     .header-utilities, .country-pill, .gold-scheme-badge { display: none; }
     .header-search { display: none; }
     .main-navbar { display: none; }
     .categories-row { grid-template-columns: repeat(2, 1fr); }
     .products-grid { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hero-banner-section { height: 240px; }
 }
