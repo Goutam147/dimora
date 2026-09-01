@@ -13,6 +13,7 @@ import ShopByGenderSection from './components/ShopByGenderSection';
 import QualityServiceSection from './components/QualityServiceSection';
 import InstagramSection from './components/InstagramSection';
 import TakeATourSection from './components/TakeATourSection';
+import ExclusiveBrandsSection from './components/ExclusiveBrandsSection';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
 
@@ -55,6 +56,7 @@ export default function App() {
         <QualityServiceSection />
         <InstagramSection />
         <TakeATourSection />
+        <ExclusiveBrandsSection />
         <FeaturedProducts
           onAddToCart={handleAddToCart}
           onToggleWishlist={handleToggleWishlist}
