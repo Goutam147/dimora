@@ -10,6 +10,7 @@ import ExclusiveBrandsSection from './components/ExclusiveBrandsSection';
 import MobileShopByPrice from './components/MobileShopByPrice';
 import CustomizeStoreSection from './components/CustomizeStoreSection';
 import MobileBestSellers from './components/MobileBestSellers';
+import MobileJoyOfGifting from './components/MobileJoyOfGifting';
 import DiamondJewellery from './components/DiamondJewellery';
 import CollectionsSection from './components/CollectionsSection';
 import ExploreJewellery from './components/ExploreJewellery';
@@ -60,7 +61,7 @@ export default function App() {
         <HeroSlider />
         <ShopByCategory />
 
-        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store -> Our Best Sellers) */}
+        {/* Mobile View Only Flow (Exclusive Brands -> Shop By Price -> Customize Store -> Our Best Sellers -> Joy Of Gifting) */}
         <div className="block md:hidden">
           <ExclusiveBrandsSection />
           <MobileShopByPrice />
@@ -69,6 +70,7 @@ export default function App() {
             onAddToCart={handleAddToCart}
             onToggleWishlist={handleToggleWishlist}
           />
+          <MobileJoyOfGifting />
         </div>
 
         <DiamondJewellery />
@@ -80,7 +82,11 @@ export default function App() {
           <CustomizeStoreSection />
         </div>
 
-        <GiftingAndMoreSection />
+        {/* Web/Desktop View Only: Gifting And More Section in original Desktop position */}
+        <div className="hidden md:block">
+          <GiftingAndMoreSection />
+        </div>
+
         <ShopByGenderSection />
         <QualityServiceSection />
         <InstagramSection />
