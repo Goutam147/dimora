@@ -84,7 +84,7 @@ export default function ShopByCategory() {
   }, []);
 
   return (
-    <section className="py-6 md:py-12 bg-white" id="shop-by-category">
+    <section className="py-4 md:py-8 bg-white" id="shop-by-category">
       <div className="max-w-[1340px] mx-auto px-3 sm:px-5">
         <SectionHeader
           title="SHOP BY CATEGORY"
@@ -92,7 +92,7 @@ export default function ShopByCategory() {
         />
 
         {/* Asymmetric Mobile & 3-Col Desktop Category Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-8 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-2 md:gap-x-6 md:gap-y-3 mt-3">
           {categories.map((cat, index) => {
             const currentIdx = imageIndices[index];
 
@@ -108,8 +108,8 @@ export default function ShopByCategory() {
                 <div
                   className={`relative w-full rounded-2xl overflow-hidden shadow-xs border border-[#F2E6D8] bg-white transition-all duration-300 group-hover:shadow-md group-hover:border-[#B30018] ${
                     cat.isFullMobile
-                      ? 'h-[160px] sm:h-[200px] md:h-[230px]'
-                      : 'h-[135px] sm:h-[170px] md:h-[230px]'
+                      ? 'h-[155px] sm:h-[190px] md:h-[220px]'
+                      : 'h-[130px] sm:h-[160px] md:h-[220px]'
                   }`}
                 >
                   {/* Right-to-Left Slide Animation Image Stack */}
@@ -143,7 +143,7 @@ export default function ShopByCategory() {
                 </div>
 
                 {/* Web / Desktop Only: Title Below Image with Original CSS Class */}
-                <span className="hidden md:block cat-rect-title mt-2.5">
+                <span className="hidden md:block cat-rect-title mt-1.5">
                   {cat.title}
                 </span>
               </a>
@@ -152,10 +152,10 @@ export default function ShopByCategory() {
         </div>
 
         {/* View All Categories Button */}
-        <div className="text-center mt-6 md:mt-10">
+        <div className="text-center mt-5 md:mt-7">
           <a
             href="#all-categories"
-            className="inline-block border-[1.5px] border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs sm:text-sm font-semibold px-6 py-2.5 rounded-md transition-all duration-200"
+            className="inline-block border-[1.5px] border-[#C5283C] text-[#C5283C] hover:bg-[#C5283C] hover:text-white font-sans text-xs sm:text-sm font-semibold px-6 py-2 rounded-md transition-all duration-200"
           >
             View All Categories
           </a>
