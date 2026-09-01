@@ -7,6 +7,7 @@ import ShopByCategory from './components/ShopByCategory';
 import DiamondJewellery from './components/DiamondJewellery';
 import CollectionsSection from './components/CollectionsSection';
 import ExploreJewellery from './components/ExploreJewellery';
+import CustomizeStoreSection from './components/CustomizeStoreSection';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
 
@@ -43,6 +44,7 @@ export default function App() {
         <DiamondJewellery />
         <CollectionsSection />
         <ExploreJewellery />
+        <CustomizeStoreSection />
         <FeaturedProducts
           onAddToCart={handleAddToCart}
           onToggleWishlist={handleToggleWishlist}
