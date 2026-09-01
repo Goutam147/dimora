@@ -3,7 +3,6 @@ import TopAnnouncementBar from './components/TopAnnouncementBar';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import HeroSlider from './components/HeroSlider';
-import TrustFeatures from './components/TrustFeatures';
 import ShopByCategory from './components/ShopByCategory';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
@@ -37,7 +36,6 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSlider />
-        <TrustFeatures />
         <ShopByCategory />
         <FeaturedProducts
           onAddToCart={handleAddToCart}
