@@ -102,7 +102,11 @@ export default function App() {
 
         <QualityServiceSection />
         <InstagramSection />
-        <TakeATourSection />
+
+        {/* Web/Desktop View Only: Take A Tour Section */}
+        <div className="hidden md:block">
+          <TakeATourSection />
+        </div>
 
         {/* Web/Desktop View Only: Exclusive Brands Section in original Desktop position */}
         <div className="hidden md:block">
